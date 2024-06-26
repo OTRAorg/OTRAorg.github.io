@@ -1,0 +1,629 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light">
+  <head>
+    <meta charset="utf-8" />
+    <title>
+      OTRA - An Ontology for the Transmission and Re-Use of Argumentative
+      Pattern (OTRA) in Christian Muslim Religious Encounters
+    </title>
+
+    <!-- SEO Meta Tags -->
+    <meta
+      name="description"
+      content="An Ontology for the Transmission and Re-Use of Argumentative Pattern (OTRA) in Christian Muslim Religious Encounters"
+    />
+    <meta
+      name="keywords"
+      content="OTRA, Ontology for Transmission and Re-Use of Argumentative Pattern, Christian-Muslim religious encounters, Marie Skłodowska-Curie project, Jacob Langeloh, Jan Loop, University of Copenhagen, Christian-Muslim dialogues, interfaith arguments, Christian anti-Islamic polemics"
+    />
+    <meta name="author" content="Digital Humanities Craft" />
+    <meta name="author" content="Jacob Langeloh" />
+
+    <!-- Open Graph -->
+    <meta
+      property="og:title"
+      content="OTRA: Interfaith Dialogues and Argumentative Patterns"
+    />
+    <meta
+      property="og:description"
+      content="Discover the Marie Skłodowska-Curie project analyzing Christian-Muslim dialogues at the University of Copenhagen."
+    />
+    <meta property="og:image" content="https://example.com/og-image.jpg" />
+    <meta
+      property="og:url"
+      content="https://example.com/otra-project-overview"
+    />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="twitter:title"
+      content="OTRA: Interfaith Dialogues and Argumentative Patterns"
+    />
+    <meta
+      name="twitter:description"
+      content="Explore the OTRA project's insights into Christian-Muslim dialogues and argumentative structures."
+    />
+    <meta
+      name="twitter:image"
+      content="https://example.com/twitter-og-image.jpg"
+    />
+
+    <!-- Viewport -->
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Theme switcher (color modes) -->
+    <script src="assets/js/theme-switcher.js"></script>
+
+    <!-- Favicon and Touch Icons -->
+
+    <link rel="icon" type="image/svg+xml" href="/assets/favicon/favicon.svg" />
+    <link rel="icon" type="image/png" href="/assets/favicon/favicon.png" />
+
+    <!-- Vendor Styles -->
+    <link
+      rel="stylesheet"
+      media="screen"
+      href="assets/vendor/boxicons/css/boxicons.min.css"
+    />
+
+    <!-- Main Theme Styles + Bootstrap -->
+    <link rel="stylesheet" media="screen" href="assets/css/theme.min.css" />
+
+    <!-- Page loading styles -->
+    <style>
+      .page-loading {
+        position: fixed;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        -webkit-transition: all 0.4s 0.2s ease-in-out;
+        transition: all 0.4s 0.2s ease-in-out;
+        background-color: #fff;
+        opacity: 0;
+        visibility: hidden;
+        z-index: 9999;
+      }
+      [data-bs-theme="dark"] .page-loading {
+        background-color: #0b0f19;
+      }
+      .page-loading.active {
+        opacity: 1;
+        visibility: visible;
+      }
+      .page-loading-inner {
+        position: absolute;
+        top: 50%;
+        left: 0;
+        width: 100%;
+        text-align: center;
+        -webkit-transform: translateY(-50%);
+        transform: translateY(-50%);
+        -webkit-transition: opacity 0.2s ease-in-out;
+        transition: opacity 0.2s ease-in-out;
+        opacity: 0;
+      }
+      .page-loading.active > .page-loading-inner {
+        opacity: 1;
+      }
+      .page-loading-inner > span {
+        display: block;
+        font-size: 1rem;
+        font-weight: normal;
+        color: #9397ad;
+      }
+      [data-bs-theme="dark"] .page-loading-inner > span {
+        color: #fff;
+        opacity: 0.6;
+      }
+      .page-spinner {
+        display: inline-block;
+        width: 2.75rem;
+        height: 2.75rem;
+        margin-bottom: 0.75rem;
+        vertical-align: text-bottom;
+        border: 0.15em solid #b4b7c9;
+        border-right-color: transparent;
+        border-radius: 50%;
+        -webkit-animation: spinner 0.75s linear infinite;
+        animation: spinner 0.75s linear infinite;
+      }
+      [data-bs-theme="dark"] .page-spinner {
+        border-color: rgba(255, 255, 255, 0.4);
+        border-right-color: transparent;
+      }
+      @-webkit-keyframes spinner {
+        100% {
+          -webkit-transform: rotate(360deg);
+          transform: rotate(360deg);
+        }
+      }
+      @keyframes spinner {
+        100% {
+          -webkit-transform: rotate(360deg);
+          transform: rotate(360deg);
+        }
+      }
+    </style>
+
+    <!-- Page loading scripts -->
+    <script>
+      (function () {
+        window.onload = function () {
+          const preloader = document.querySelector(".page-loading");
+          preloader.classList.remove("active");
+          setTimeout(function () {
+            preloader.remove();
+          }, 1000);
+        };
+      })();
+    </script>
+  </head>
+
+  <!-- Body -->
+  <body>
+    <!-- Page loading spinner -->
+    <div class="page-loading active">
+      <div class="page-loading-inner">
+        <div class="page-spinner"></div>
+        <span>Loading...</span>
+      </div>
+    </div>
+
+    <!-- Page wrapper for sticky footer -->
+    <!-- Wraps everything except footer to push footer to the bottom of the page if there is little content -->
+    <main class="page-wrapper">
+      <!-- Navbar -->
+      <!-- Remove "navbar-sticky" class to make navigation bar scrollable with the page -->
+      <header class="header navbar navbar-expand-lg bg-light navbar-sticky">
+        <div class="container px-3">
+          <a href="/" class="navbar-brand pe-3" title="Home"
+            ><i class="bx bx-home-alt"></i
+          ></a>
+          <div id="navbarNav" class="offcanvas offcanvas-end">
+            <div class="offcanvas-header border-bottom">
+              <h5 class="offcanvas-title">Menu</h5>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="offcanvas"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div class="offcanvas-body">
+              <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item active">
+                  <a href="/about" class="nav-link">About</a>
+                </li>
+                 <li class="nav-item">
+                  <a href="/data" class="nav-link">Data</a>
+                </li>
+                <li class="nav-item">
+                  <a href="/ontology" class="nav-link">Ontology</a>
+                </li>
+                <li class="nav-item">
+                  <a href="/tutorial" class="nav-link">Tutorial</a>
+                </li>
+                <!-- <li class="nav-item">
+                  <a href="/links" class="nav-link">Links</a>
+                </li> -->
+              </ul>
+            </div>
+          </div>
+          <div
+            class="form-check form-switch mode-switch pe-lg-1 ms-auto me-4"
+            data-bs-toggle="mode"
+          >
+            <input type="checkbox" class="form-check-input" id="theme-mode" />
+            <label class="form-check-label d-none d-sm-block" for="theme-mode"
+              >Light</label
+            >
+            <label class="form-check-label d-none d-sm-block" for="theme-mode"
+              >Dark</label
+            >
+          </div>
+          <button
+            type="button"
+            class="navbar-toggler"
+            data-bs-toggle="offcanvas"
+            data-bs-target="#navbarNav"
+            aria-controls="navbarNav"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+        </div>
+      </header>
+
+      <!-- About project -->
+      <section class="container py-5 my-1 my-md-4 my-lg-5">
+        <div class="row">
+          <div class="col-lg-9 mb-4 mb-lg-0">
+            <div class="pe-lg-4 me-lg-3 pe-xl-0 me-xl-0">
+              <h1 id="background-and-theory">Background and Theory</h1>
+              <p>
+                For centuries, Christian scholars have engaged intellectually
+                with Islam. Yet, Edward W. Said has claimed that this discourse
+                was not about understanding Islam, but had the “self-containing,
+                self-reinforcing character of a closed system”(E. W. Said,
+                Orientalism, London etc., repr. 2003 (first edition: 1978),
+                70.). He termed this phenomenon "Orientalism". Others have
+                countered Said's view, arguing that change, innovation, or even
+                understanding manifested along the way.
+              </p>
+              <p>
+                The goal of this project was to deepen our understanding of the
+                historical discourse of Christian-Muslim Religious Encounters
+                (<abbr title="Christian-Muslim Religious Encounters">CMRE</abbr
+                >). To achieve this, the project formalized key aspects of this
+                discourse as Linked Data, laying the ground for a comparisons
+                across eras, regions, and languages. Specifically, it
+                concentrated on two critical elements: reference and reuse, and
+                argumentation. But why focus on these?
+              </p>
+              <h2 id="reference-and-re-use">Reference and Re-Use</h2>
+              <p>
+                Sacred texts like the Torah, Bible, and Qur'an hold a central
+                place in their respective religions. In religious debates, these
+                texts and their commentaries were therefore cited as
+                "authorities" that lend truth to arguments. This approach was
+                also applied in interreligious arguments. In debates between
+                Christianity and Islam, for instance, the Bible and the Qur'an
+                took center stage.
+              </p>
+              <p>
+                Christians in the Middle Ages, however, usually had no
+                translation of the Qur'an at their disposal. As a result, they
+                consulted secondary sources, such as the work _Contra legem
+                Sarracenorum_ (CLS) by the Dominican friar Riccoldo da Monte di
+                Croce. Riccoldo himself relied on various sources, including the
+                Qur'an, authorized sayings of the prophet (Hadith), and Islamic
+                exegesis (Tafsir). He also leaned on a Latin work called _Liber
+                denudationis_ which is based on an Arabic text, the "Book of
+                Clarity with Regard to the Truth" written by Būluṣ ibn Rajā in
+                11th-century Egypt. Through this chain of transmission, Būluṣ
+                ibn Rajā's knowledge spread into Europe and beyond.
+              </p>
+              <p>
+                <figure class="figure">
+                  <img
+                    class="figure-img"
+                    src="assets/img/denu_reception.png"
+                    alt="Book of Clarity with Regard to the Truth"
+                  />
+                  <figcaption class="figure-caption text-center">
+                    The "Book of Clarity with Regard to the Truth" by Bulus
+                    Ibn-Raja was translated into Latin, that translation was
+                    incorporated by Riccoldo da Monte di Croce, and then had a
+                    wide reception in Europe and beyond.
+                  </figcaption>
+                </figure>
+              </p>
+              <p>
+                Understanding these connections is vital for tracing how ideas
+                and arguments spread in interreligious discourse.
+              </p>
+              <h2 id="arguments-and-concepts">Arguments</h2>
+              <p>
+                While references and re-use constitute the basis of the
+                transmission and development of ideas, it raises the question
+                what arguments are made based on them. Alain de Lille famous
+                said: "Since authority has a nose of wax, the sense [of a
+                scriptural passage] can be bent in different ways” (Sed quia
+                auctoritas cereum habet nasum, id est in diversum potest flecti
+                sensum.) (Alain de Lille, De fide catholica I, 30, Migné
+                Patrologia Latina 2I0, 333 A)). This means that authoritative
+                sources can be interpreted in different ways, supporting wildly
+                different viewpoints. To capture this dimension, OTRA also
+                describes which statements were supported by a certain
+                authority. Statements could be, e.g., that "The Qur'an states
+                that the Gospel should be recognized as an authority by
+                Muslims", which is supported by Qur'an 5:46, as quoted by
+                Riccoldo da Monte di Croce,
+                <abbr title="Contra legem Sarracenorum">CLS</abbr> 16,21.
+              </p>
+              <p>
+                Finally, the arguments are expressed in conjunction with certain
+                topics that are relevant for the interreligious discourse. In
+                the above example, the topic is the Gospel and its truth, and
+                the wider context is that of salvation.
+              </p>
+              <h1 id="outputs">Outputs of the OTRA project</h1>
+              <h2 id="articles">Articles</h2>
+              <ul>
+                <li>
+                  ‘Simplify and Doctrinalise, Historify and Personalise: How Two
+                  Less-Known Works of Anti-Islamic Polemic from c. 1370–1440
+                  Adapted their Sources’ in: Journal of Qur&#39;anic Studies
+                  25.2 (2023) (European Visions of the Qur&#39;an in the Middle
+                  Ages, ed. by F. Ninitte and I. Reginato), 186–210.(<a
+                    href="https://doi.org/10.3366/jqs.2023.0548"
+                    >https://doi.org/10.3366/jqs.2023.0548</a
+                  >)
+                </li>
+                <li>
+                  Langeloh, Jacob, 'Sharing Knowledge about Interreligious
+                  Connections. A Linked Data Approach to Medieval Studies';
+                  forthcoming in TEOL-information, 2024.
+                </li>
+              </ul>
+              <h2 id="datasets-">Datasets:</h2>
+              <ul>
+                <li>Ontology: otracon()</li>
+                <li>OtraDataOne: otradata()</li>
+              </ul>
+              <h2 id="editions">Editions</h2>
+              <ul>
+                <li>
+                  Sections on Muhammad from: Anonymous,
+                  <i>Epitome bellorum sacrorum</i>, in: Henricus Canisius (Ed.):
+                  Antiquae Lectiones, vol. 6., Ingolstadt, 1604, pp. 249–294.
+                </li>
+              </ul>
+              <h2 id="talks-some-with-videos-">Talks (some with videos)</h2>
+              <ul>
+                <li>
+                  Copenhagen 2024: &quot;Exploring the Network of
+                  Christian-Islamic Polemics. Insights and Learnings from the
+                  OTRA project&quot;
+                </li>
+                <li>
+                  Graz, 2023 &quot;Three rings, one story? Reconstructing the
+                  historical connectivity of religious encounters within the
+                  OTRA project (Ontology for the Transmission and Re-Use of
+                  Argumentative Patterns)&quot;
+                </li>
+                <li>
+                  Nantes, 2023 &quot;Honey-coated poison: how the Qur’an was
+                  viewed as a temptation in anti-Islamic polemics, and how to
+                  trace a rhetorical motif over time.&quot; (<a
+                    href="https://www.youtube.com/watch?v=jjai8Art-f0&amp;pp=ygUOamFjb2IgbGFuZ2Vsb2g%3D"
+                    >Video</a
+                  >)
+                </li>
+                <li>
+                  DHNB 2023 &quot;Collecting and Sharing References in
+                  Christian-Muslim Religious Encounters with the OTRA Framework:
+                  An Assessment and a Roadmap&quot; (<a
+                    href="https://www.youtube.com/watch?v=7LpHKj1wuKs&amp;pp=ygUOamFjb2IgbGFuZ2Vsb2g%3D"
+                    >Video</a
+                  >)
+                </li>
+                <li>
+                  <a
+                    href="https://otra.hypotheses.org/files/2024/06/explicit_linkage_small.pdf"
+                    >Research Seminar, Copenhagen 2022</a
+                  >: Warning: Explicit Linkage. Describing and analysing
+                  connectivity in (inter)religious argumentation through Linked
+                  Open Data
+                </li>
+              </ul>
+              <h2 id="events">Events</h2>
+              <ul>
+                <li>
+                  Workshop Interreligious Connectivity – Digitally Explored (<a
+                    href="https://otra.hypotheses.org/interreligious-connectivity"
+                    >https://otra.hypotheses.org/interreligious-connectivity</a
+                  >)
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-lg-3 position-relative">
+            <div
+              class="sticky-top ms-xl-5 ms-lg-4 ps-xxl-4"
+              style="top: 105px !important"
+            >
+              <h6>Content:</h6>
+              <div class="mb-4 pb-lg-3">
+                <a
+                  href="#background-and-theory"
+                  data-scroll=""
+                  data-scroll-offset="10"
+                  class="fw-bold mb-2 d-block"
+                >
+                  Background and Theory
+                </a>
+                <a
+                  href="#reference-and-re-use"
+                  data-scroll=""
+                  data-scroll-offset="20"
+                  class="mb-2 d-block"
+                >
+                  Reference and Re-Use
+                </a>
+                <a
+                  href="#arguments-and-concepts"
+                  data-scroll=""
+                  data-scroll-offset="70"
+                  class="mb-2 d-block"
+                >
+                  Arguments
+                </a>
+                <a
+                  href="#outputs"
+                  data-scroll=""
+                  data-scroll-offset="70"
+                  class="fw-bold mb-2 d-block"
+                >
+                  Outputs
+                </a>
+                <a
+                  href="#articles"
+                  data-scroll=""
+                  data-scroll-offset="70"
+                  class="mb-2 d-block"
+                >
+                  Articles
+                </a>
+                <a
+                  href="#datasets-"
+                  data-scroll=""
+                  data-scroll-offset="70"
+                  class="mb-2 d-block"
+                >
+                  Datasets
+                </a>
+                <a
+                  href="#editions"
+                  data-scroll=""
+                  data-scroll-offset="70"
+                  class="mb-2 d-block"
+                >
+                  Editions
+                </a>
+                <a
+                  href="#talks-some-with-videos-"
+                  data-scroll=""
+                  data-scroll-offset="70"
+                  class="mb-2 d-block"
+                >
+                  Talks (some with videos)
+                </a>
+                <a
+                  href="#events"
+                  data-scroll=""
+                  data-scroll-offset="70"
+                  class="mb-2 d-block"
+                >
+                  Events
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer bg-secondary pt-5 pb-4 pb-lg-5">
+      <div class="container pt-lg-4">
+        <div class="row pb-5">
+          <div class="col-lg-5 col-md-7">
+            <div class="navbar-brand text-dark p-0 me-0 mb-3 mb-lg-4">OTRA</div>
+            <p class="fs-sm">
+              OTRA - An Ontology for the Transmission and Re-Use of
+              Argumentative Pattern in Christian Muslim Religious Encounters
+            </p>
+            <div class="d-flex justify-content-start align-items-center">
+              <img
+                src="assets/img/EN_fundedbyEU_VERTICAL_RGB_POS.png"
+                alt="Funded by the EU"
+                class="img-fluid me-4"
+                style="width: 150px"
+              />
+              <img
+                src="assets/img/logo-euqu.png"
+                alt="EUQU Project Logo"
+                class="img-fluid me-4"
+                style="width: 150px"
+              />
+              <img
+                src="assets/img/ku_logo_uk_v.png"
+                alt="KU University Logo"
+                class="img-fluid"
+                style="width: 120px"
+              />
+            </div>
+          </div>
+          <div
+            class="col-xl-5 col-lg-6 col-md-4 offset-xl-2 offset-md-1 pt-4 pt-md-1 pt-lg-0"
+          >
+            <div id="footer-links" class="row">
+              <div class="col-lg-4">
+                <h6 class="mb-2">
+                  <a
+                    href="#useful-links"
+                    class="d-block text-dark dropdown-toggle d-lg-none py-2"
+                    data-bs-toggle="collapse"
+                    >Sitemap</a
+                  >
+                </h6>
+                <div
+                  id="useful-links"
+                  class="collapse d-lg-block"
+                  data-bs-parent="#footer-links"
+                >
+                  <ul class="nav flex-column pb-lg-1 mb-lg-3">
+                    <li class="nav-item">
+                      <a href="#" class="nav-link d-inline-block px-0 pt-1 pb-2"
+                        >Home</a
+                      >
+                    </li>
+                    <li class="nav-item">
+                      <a href="#" class="nav-link d-inline-block px-0 pt-1 pb-2"
+                        >About</a
+                      >
+                    </li>
+                    <li class="nav-item">
+                      <a href="#" class="nav-link d-inline-block px-0 pt-1 pb-2"
+                        >Data</a
+                      >
+                    </li>
+                    <li class="nav-item">
+                      <a href="#" class="nav-link d-inline-block px-0 pt-1 pb-2"
+                        >Tutorial</a
+                      >
+                    </li>
+                    <li class="nav-item">
+                      <a href="#" class="nav-link d-inline-block px-0 pt-1 pb-2"
+                        >Links</a
+                      >
+                    </li>
+                  </ul>
+                </div>
+              </div>
+
+              <div class="col-xl-8 col-lg-8 pt-2 pt-lg-0">
+                <h6 class="mb-2">Contact</h6>
+                <a href="mailto:jacob.langeloh@teol.ku.dk" class="fw-medium"
+                  >jacob.langeloh@teol.ku.dk</a
+                >
+                <ul class="nav flex-column mb-2 mb-lg-0">
+                  <li class="nav-item">
+                    <a href="/imprint" class="nav-link d-inline-block px-0 pt-1 pb-2"
+                      >Imprint</a
+                    >
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+        <p
+          class="nav d-block fs-xs text-center text-md-start pb-2 pb-lg-0 mb-0"
+        >
+          Made with
+          <i
+            class="bx bx-heart d-inline-block fs-lg text-gradient-primary align-middle mt-n1 mx-1"
+          >
+          </i>
+          by
+          <a
+            href="https://dhcraft.org"
+            class="text-muted"
+            target="_blank"
+            rel="noopener"
+            >DH Craft</a
+          >
+        </p>
+      </div>
+    </footer>
+
+    <!-- Back to top button -->
+    <a href="#top" class="btn-scroll-top" data-scroll>
+      <span class="btn-scroll-top-tooltip text-muted fs-sm me-2">Top</span>
+      <i class="btn-scroll-top-icon bx bx-chevron-up"></i>
+    </a>
+
+    <!-- Vendor Scripts -->
+    <script src="assets/vendor/jarallax/dist/jarallax.min.js"></script>
+
+    <!-- Main Theme Script -->
+    <script src="assets/js/theme.min.js"></script>
+  </body>
+</html>

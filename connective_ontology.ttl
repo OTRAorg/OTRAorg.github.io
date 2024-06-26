@@ -1,0 +1,740 @@
+@prefix : <https://otra-ontologies.com/ConnectiveOntology#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix hdn: <https://hdn.dantenetwork.it/ontology#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix lrmoo: <http://iflastandards.info/ns/lrm/lrmoo/> .
+@prefix terms: <http://purl.org/dc/terms/> .
+@prefix ontology: <https://dlnarratives.eu/ontology#> .
+@prefix otradata: <https://otra-ontologies.com/data/> .
+@prefix cidoc-crm: <http://www.cidoc-crm.org/cidoc-crm/> .
+@prefix ConnectiveOntology: <https://otra-ontologies.com/ConnectiveOntology#> .
+@base <https://otra-ontologies.com/ConnectiveOntology#> .
+
+<https://otra-ontologies.com/ConnectiveOntology#> rdf:type owl:Ontology ;
+                                                   owl:imports lrmoo: ,
+                                                               cidoc-crm: ,
+                                                               <https://otra-ontologies.com/ConnectiveOntology#> ;
+                                                   dc:creator "Jacob Langeloh, based on HDN by Carlo Meghini, Valentina Bartalesi, Daniele Metilli, Filippo Benedetti and on the SAWS ontology by Anna Jordanous (knowledge modelling and CTS), Faith Lawrence, Keith Lawrence (developers) and Charlotte Tupman." ;
+                                                   dc:date "2024-06-24" ;
+                                                   dc:publisher "" ;
+                                                   terms:license "https://creativecommons.org/licenses/by-sa/4.0/" ;
+                                                   rdfs:comment "The Ontology for the Transmission and Re-Use of Argumentative Patterns (OTRA) allows to explicitly represent connections between texts and arguments. OTRA is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License." ;
+                                                   rdfs:label "Ontology for the Transmission and Re-Use of Argumentative Patterns" ;
+                                                   owl:versionInfo 0.1 .
+
+#################################################################
+#    Annotation properties
+#################################################################
+
+###  http://purl.org/dc/elements/1.1/creator
+dc:creator rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/elements/1.1/date
+dc:date rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/elements/1.1/description
+dc:description rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/elements/1.1/publisher
+dc:publisher rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/license
+terms:license rdf:type owl:AnnotationProperty .
+
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://iflastandards.info/ns/lrm/lrmoo/R67_has_part
+lrmoo:R67_has_part rdf:type owl:ObjectProperty .
+
+
+###  http://www.cidoc-crm.org/cidoc-crm/P129_is_about
+cidoc-crm:P129_is_about rdf:type owl:ObjectProperty .
+
+
+###  http://www.cidoc-crm.org/cidoc-crm/P129i_is_subject_of
+cidoc-crm:P129i_is_subject_of rdf:type owl:ObjectProperty .
+
+
+###  http://www.cidoc-crm.org/cidoc-crm/P2_has_type
+cidoc-crm:P2_has_type rdf:type owl:ObjectProperty .
+
+
+###  http://www.w3.org/2006/time#hasBeginning
+<http://www.w3.org/2006/time#hasBeginning> rdf:type owl:ObjectProperty ;
+                                           rdfs:subPropertyOf <http://www.w3.org/2006/time#hasTime> ;
+                                           rdfs:comment "Beginning of a temporal entity"@en ;
+                                           rdfs:label "has beginning"@en .
+
+
+###  http://www.w3.org/2006/time#hasEnd
+<http://www.w3.org/2006/time#hasEnd> rdf:type owl:ObjectProperty ;
+                                     rdfs:subPropertyOf <http://www.w3.org/2006/time#hasTime> ;
+                                     rdfs:comment "End of a temporal entity"@en ;
+                                     rdfs:label "has end"@en .
+
+
+###  http://www.w3.org/2006/time#hasTime
+<http://www.w3.org/2006/time#hasTime> rdf:type owl:ObjectProperty ;
+                                      rdfs:comment "Supports the association of a temporal entity (instant or interval) to any thing"@en ;
+                                      rdfs:label "has time"@en .
+
+
+###  https://hdn.dantenetwork.it/ontology#fromPosition
+hdn:fromPosition rdf:type owl:ObjectProperty ;
+                 rdfs:domain hdn:TextFragment ;
+                 rdfs:range hdn:Position ;
+                 rdfs:comment "from position"@en ;
+                 rdfs:label "fromPosition"@en .
+
+
+###  https://hdn.dantenetwork.it/ontology#hasRefObject
+hdn:hasRefObject rdf:type owl:ObjectProperty ;
+                 rdfs:subPropertyOf cidoc-crm:P129_is_about ;
+                 rdfs:domain hdn:Reference ;
+                 rdfs:range cidoc-crm:E1_CRM_Entity ;
+                 rdfs:comment "Object of a Connective Claim, i.e. the propositional content that helps to understand the subject."@en ;
+                 rdfs:label "hasRefObject"@en .
+
+
+###  https://hdn.dantenetwork.it/ontology#hasRefSubjObj
+hdn:hasRefSubjObj rdf:type owl:ObjectProperty ;
+                  rdfs:subPropertyOf cidoc-crm:P2_has_type ;
+                  rdfs:domain hdn:Reference ;
+                  rdfs:range hdn:Subject-ObjectRelationship ;
+                  rdfs:label "hasRefSubjObj"@en .
+
+
+###  https://hdn.dantenetwork.it/ontology#hasRefSubject
+hdn:hasRefSubject rdf:type owl:ObjectProperty ;
+                  rdfs:subPropertyOf cidoc-crm:P46_is_composed_of ;
+                  rdfs:domain hdn:Reference ;
+                  rdfs:range cidoc-crm:E90_Symbolic_Object ;
+                  rdfs:comment "The subject of a ConnectiveClaim is a propositional object, usually a textual passage, that can be better understood by consulting the object, which can be another text passage, a motif, a person, and more."@en ;
+                  rdfs:label "hasRefSubject"@en .
+
+
+###  https://hdn.dantenetwork.it/ontology#hasSource
+hdn:hasSource rdf:type owl:ObjectProperty ;
+              rdfs:subPropertyOf cidoc-crm:P129i_is_subject_of ;
+              rdfs:domain hdn:Reference ;
+              rdfs:range hdn:Sentence ;
+              rdfs:comment "Source that is establishing the ConnectiveClaim, which links a subject to an explanative object."@en ;
+              rdfs:label "hasRefSource"@en .
+
+
+###  https://hdn.dantenetwork.it/ontology#positionUnit
+hdn:positionUnit rdf:type owl:ObjectProperty ;
+                 rdfs:subPropertyOf lrmoo:R70_has_dimension ;
+                 rdfs:domain hdn:Position ;
+                 rdfs:range lrmoo:F2_Expression ;
+                 rdfs:label "positionUnit"@en .
+
+
+###  https://hdn.dantenetwork.it/ontology#toPosition
+hdn:toPosition rdf:type owl:ObjectProperty ;
+               rdfs:domain hdn:TextFragment ;
+               rdfs:range hdn:Position ;
+               rdfs:comment "Signals the ending position of a text unit."@en ;
+               rdfs:label "to Position"@en .
+
+
+###  https://otra-ontologies.com/ConnectiveOntology#asserted_as_a_connection
+ConnectiveOntology:asserted_as_a_connection rdf:type owl:ObjectProperty ;
+                                            owl:inverseOf ConnectiveOntology:was_asserted_as_a_connection_by ;
+                                            rdfs:domain cidoc-crm:E1_CRM_Entity ;
+                                            rdfs:range ConnectiveOntology:ConnectiveClaim ;
+                                            rdfs:comment "Records who asserted a certain ConnectiveClaim."@en ;
+                                            rdfs:label "asserted as a connection"@en .
+
+
+###  https://otra-ontologies.com/ConnectiveOntology#hasParallelType
+ConnectiveOntology:hasParallelType rdf:type owl:ObjectProperty ;
+                                   rdfs:subPropertyOf cidoc-crm:P2_has_type ;
+                                   owl:inverseOf ConnectiveOntology:isParallelTypeOf ;
+                                   rdfs:domain ConnectiveOntology:ConnectiveClaim ;
+                                   rdfs:range ConnectiveOntology:ParallelType ;
+                                   rdfs:comment "Further specifies a Textual or Topica Parallel by giving it a type, such as \"Verbatim\", or \"LooseRendering\"."@en ;
+                                   rdfs:label "has parallel type"@en .
+
+
+###  https://otra-ontologies.com/ConnectiveOntology#hasSignallingObject
+ConnectiveOntology:hasSignallingObject rdf:type owl:ObjectProperty ;
+                                       owl:inverseOf ConnectiveOntology:isSignallingObjectOf ;
+                                       rdfs:domain ConnectiveOntology:ConnectiveClaim ;
+                                       rdfs:range owl:Thing ;
+                                       rdfs:comment "Specifies what object the signalling of a Connective Claim refers to, e.g. \"Jesus\", \"The Bible\", \"some person\", or \"some book\"."@en ;
+                                       rdfs:label "has signalling object"@en .
+
+
+###  https://otra-ontologies.com/ConnectiveOntology#hasSignallingType
+ConnectiveOntology:hasSignallingType rdf:type owl:ObjectProperty ;
+                                     rdfs:subPropertyOf cidoc-crm:P2_has_type ;
+                                     owl:inverseOf ConnectiveOntology:isSignallingTypeOf ;
+                                     rdfs:domain ConnectiveOntology:ConnectiveClaim ;
+                                     rdfs:range ConnectiveOntology:Citation_Signalling ;
+                                     rdfs:comment "Links a Connective Claim to a specific kind of signalling. Signalling indicates whether and how the subject makes clear that it re-uses or cites another text."@en ;
+                                     rdfs:label "Has signalling type"@en .
+
+
+###  https://otra-ontologies.com/ConnectiveOntology#isParallelTypeOf
+ConnectiveOntology:isParallelTypeOf rdf:type owl:ObjectProperty ;
+                                    rdfs:subPropertyOf cidoc-crm:P2i_is_type_of ;
+                                    rdfs:domain ConnectiveOntology:ParallelType ;
+                                    rdfs:range ConnectiveOntology:ConnectiveClaim ;
+                                    rdfs:comment "Signifies that a certain ParallelType is the type of a specific ConnectiveClaim."@en ;
+                                    rdfs:label "is parallel type of"@en .
+
+
+###  https://otra-ontologies.com/ConnectiveOntology#isSignallingObjectOf
+ConnectiveOntology:isSignallingObjectOf rdf:type owl:ObjectProperty ;
+                                        rdfs:domain owl:Thing ;
+                                        rdfs:range ConnectiveOntology:ConnectiveClaim ;
+                                        rdfs:comment "Affirms to which ConnectiveClaim a signalling object belongs."@en ;
+                                        rdfs:label "is signalling object of"@en .
+
+
+###  https://otra-ontologies.com/ConnectiveOntology#isSignallingTypeOf
+ConnectiveOntology:isSignallingTypeOf rdf:type owl:ObjectProperty ;
+                                      rdfs:subPropertyOf cidoc-crm:P2i_is_type_of ;
+                                      rdfs:domain ConnectiveOntology:Citation_Signalling ;
+                                      rdfs:range ConnectiveOntology:ConnectiveClaim ;
+                                      rdfs:comment "Specifies which ConnectiveClaim a SignallingType typifies."@en ;
+                                      rdfs:label "is signalling type of"@en .
+
+
+###  https://otra-ontologies.com/ConnectiveOntology#was_asserted_as_a_connection_by
+ConnectiveOntology:was_asserted_as_a_connection_by rdf:type owl:ObjectProperty ;
+                                                   rdfs:domain ConnectiveOntology:ConnectiveClaim ;
+                                                   rdfs:range cidoc-crm:E1_CRM_Entity ;
+                                                   rdfs:comment "Basic predicate to link a Connective Claim to its act of creation, often the publication of a researcher."@en ;
+                                                   rdfs:label "was asserted as a connection by"@en .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  http://www.w3.org/2002/07/owl#topDataProperty
+owl:topDataProperty rdfs:domain [ rdf:type owl:Restriction ;
+                                  owl:onProperty owl:topDataProperty ;
+                                  owl:someValuesFrom owl:rational
+                                ] .
+
+
+###  https://hdn.dantenetwork.it/ontology#positionOffset
+hdn:positionOffset rdf:type owl:DatatypeProperty ,
+                            owl:FunctionalProperty ;
+                   rdfs:domain hdn:Position ;
+                   rdfs:range xsd:integer ;
+                   rdfs:label "positionOffset"@en .
+
+
+###  https://otra-ontologies.com/ConnectiveOntology#has_claim_text
+ConnectiveOntology:has_claim_text rdf:type owl:DatatypeProperty ;
+                                  rdfs:domain ConnectiveOntology:ConnectiveClaim ;
+                                  rdfs:range xsd:string ;
+                                  rdfs:comment "Gives the text that establishes a connective claim"@en ;
+                                  rdfs:label "has claim text" .
+
+
+###  https://otra-ontologies.com/ConnectiveOntology#has_explicit
+ConnectiveOntology:has_explicit rdf:type owl:DatatypeProperty ;
+                                rdfs:domain cidoc-crm:E28_Conceptual_Object ;
+                                rdfs:range xsd:string ;
+                                rdfs:comment "Marks the last few words of a textual unit." ;
+                                rdfs:label "has explicit" .
+
+
+###  https://otra-ontologies.com/ConnectiveOntology#has_incipit
+ConnectiveOntology:has_incipit rdf:type owl:DatatypeProperty ;
+                               rdfs:domain cidoc-crm:E28_Conceptual_Object ;
+                               rdfs:range xsd:string ;
+                               rdfs:comment "Marks the first few words of a text fragment." ;
+                               rdfs:label "has incipit"@en .
+
+
+###  https://otra-ontologies.com/ConnectiveOntology#has_ref_text
+ConnectiveOntology:has_ref_text rdf:type owl:DatatypeProperty ;
+                                rdfs:domain ConnectiveOntology:ConnectiveClaim ;
+                                rdfs:range xsd:string ;
+                                rdfs:comment "Gives the text that is assigned to the reference within the text itself" ;
+                                rdfs:label "has ref text" .
+
+
+###  https://otra-ontologies.com/ConnectiveOntology#has_signalling_text
+ConnectiveOntology:has_signalling_text rdf:type owl:DatatypeProperty ;
+                                       rdfs:domain ConnectiveOntology:ConnectiveClaim ;
+                                       rdfs:range xsd:string ;
+                                       rdfs:comment "Gives the part of the main text that signals the reference."@en ;
+                                       rdfs:label "has signalling text"@en .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://www.cidoc-crm.org/cidoc-crm/E18_Physical_Thing
+cidoc-crm:E18_Physical_Thing rdf:type owl:Class .
+
+
+###  http://www.cidoc-crm.org/cidoc-crm/E19_Physical_Object
+cidoc-crm:E19_Physical_Object rdf:type owl:Class .
+
+
+###  http://www.cidoc-crm.org/cidoc-crm/E1_CRM_Entity
+cidoc-crm:E1_CRM_Entity rdf:type owl:Class .
+
+
+###  http://www.cidoc-crm.org/cidoc-crm/E20_Biological_Object
+cidoc-crm:E20_Biological_Object rdf:type owl:Class ;
+                                rdfs:subClassOf cidoc-crm:E19_Physical_Object .
+
+
+###  http://www.cidoc-crm.org/cidoc-crm/E33_Linguistic_Object
+cidoc-crm:E33_Linguistic_Object rdf:type owl:Class .
+
+
+###  http://www.cidoc-crm.org/cidoc-crm/E36_Visual_Item
+cidoc-crm:E36_Visual_Item rdf:type owl:Class ;
+                          rdfs:subClassOf cidoc-crm:E33_Linguistic_Object .
+
+
+###  http://www.cidoc-crm.org/cidoc-crm/E39_Actor
+cidoc-crm:E39_Actor rdf:type owl:Class .
+
+
+###  http://www.cidoc-crm.org/cidoc-crm/E4_Period
+cidoc-crm:E4_Period rdf:type owl:Class .
+
+
+###  http://www.cidoc-crm.org/cidoc-crm/E52_Time-Span
+cidoc-crm:E52_Time-Span rdf:type owl:Class .
+
+
+###  http://www.cidoc-crm.org/cidoc-crm/E53_Place
+cidoc-crm:E53_Place rdf:type owl:Class .
+
+
+###  http://www.cidoc-crm.org/cidoc-crm/E54_Dimension
+cidoc-crm:E54_Dimension rdf:type owl:Class .
+
+
+###  http://www.cidoc-crm.org/cidoc-crm/E55_Type
+cidoc-crm:E55_Type rdf:type owl:Class .
+
+
+###  http://www.cidoc-crm.org/cidoc-crm/E5_Event
+cidoc-crm:E5_Event rdf:type owl:Class .
+
+
+###  http://www.cidoc-crm.org/cidoc-crm/E70_Thing
+cidoc-crm:E70_Thing rdf:type owl:Class .
+
+
+###  http://www.cidoc-crm.org/cidoc-crm/E71_Human-Made_Thing
+cidoc-crm:E71_Human-Made_Thing rdf:type owl:Class .
+
+
+###  http://www.cidoc-crm.org/cidoc-crm/E73_Information_Object
+cidoc-crm:E73_Information_Object rdf:type owl:Class .
+
+
+###  http://www.cidoc-crm.org/cidoc-crm/E89_Propositional_Object
+cidoc-crm:E89_Propositional_Object rdf:type owl:Class .
+
+
+###  http://www.cidoc-crm.org/cidoc-crm/E90_Symbolic_Object
+cidoc-crm:E90_Symbolic_Object rdf:type owl:Class .
+
+
+###  https://hdn.dantenetwork.it/ontology#ExternalSupport
+hdn:ExternalSupport rdf:type owl:Class ;
+                    rdfs:subClassOf ConnectiveOntology:ConnectiveClaim .
+
+
+###  https://hdn.dantenetwork.it/ontology#LociParalleli
+hdn:LociParalleli rdf:type owl:Class ;
+                  rdfs:subClassOf ConnectiveOntology:ConnectiveClaim ;
+                  rdfs:comment "General class to express that a text fragment bears similarity to another thing."@en ;
+                  rdfs:label "Loci Paralleli" .
+
+
+###  https://hdn.dantenetwork.it/ontology#Position
+hdn:Position rdf:type owl:Class ;
+             rdfs:label "Position"@en .
+
+
+###  https://hdn.dantenetwork.it/ontology#Reference
+hdn:Reference rdf:type owl:Class ;
+              owl:equivalentClass ConnectiveOntology:ConnectiveClaim .
+
+
+###  https://hdn.dantenetwork.it/ontology#Sentence
+hdn:Sentence rdf:type owl:Class ;
+             rdfs:label "Sentence" .
+
+
+###  https://hdn.dantenetwork.it/ontology#Subject-ObjectRelationship
+hdn:Subject-ObjectRelationship rdf:type owl:Class .
+
+
+###  https://hdn.dantenetwork.it/ontology#TextFragment
+hdn:TextFragment rdf:type owl:Class .
+
+
+###  https://otra-ontologies.com/ConnectiveOntology#Citation_Signalling
+ConnectiveOntology:Citation_Signalling rdf:type owl:Class ;
+                                       rdfs:subClassOf cidoc-crm:E55_Type ;
+                                       rdfs:comment """Denotes the type of textual signalling, i.e. whether or not the text tells us it is referring to something external of itself.
+
+Examples:
+
+\"As David said [...]\" = specificPersonalSignalling
+\"As the Bible says\" = genericTextualSignalling
+\"As a wise man once said\" = genericPersonalSignalling
+\"As is written in Corinthians 2.4 \" = specificTextualSignalling
+
+Personal and textual signalling can of course be combined, e.g.:
+
+\"As the Apostle says in Corinthians 2,4\" = specificTextualSignalling and  specificPersonalSignalling"""@en ;
+                                       rdfs:label "Citation Signalling"@en .
+
+
+###  https://otra-ontologies.com/ConnectiveOntology#Claim
+ConnectiveOntology:Claim rdf:type owl:Class ;
+                         rdfs:subClassOf cidoc-crm:E73_Information_Object ;
+                         rdfs:comment "A speech act that includes assertion by the speaker that they consider this utterance to be true."@en ;
+                         rdfs:label "Claim"@en .
+
+
+###  https://otra-ontologies.com/ConnectiveOntology#Comment
+ConnectiveOntology:Comment rdf:type owl:Class ;
+                           rdfs:subClassOf ConnectiveOntology:ConnectiveClaim ;
+                           rdfs:comment "Comment added by an editor which connects the subject to a certain interpretation without pointing to an external resource."@en ;
+                           rdfs:label "Comment"@en .
+
+
+###  https://otra-ontologies.com/ConnectiveOntology#ConnectiveClaim
+ConnectiveOntology:ConnectiveClaim rdf:type owl:Class ;
+                                   rdfs:subClassOf ConnectiveOntology:Claim ;
+                                   rdfs:comment """A Connective Claim proposes that \"knowledge about x can be enriched through considering y\", where
+
+- x is the subject of the claim (generally a text passage)
+- y is the object of the claim (a text passage, a motif, a location)
+
+Connective claims are often uttered in scholarly contexts, for example when identifying a citation or a reference.
+
+Connective claim is equivalent to the class hdn:Reference."""@en ;
+                                   rdfs:label "Connective Claim"@en .
+
+
+###  https://otra-ontologies.com/ConnectiveOntology#ParallelType
+ConnectiveOntology:ParallelType rdf:type owl:Class ;
+                                rdfs:subClassOf cidoc-crm:E55_Type ;
+                                rdfs:comment "Further specifies a Textual or Topical Parallel by assigning is a type. The type usually states how close the subject and the object are to each other from 'Verbatim', i.e. word-for-word identical, to a 'LooseRendering', which makes them very different."@en ;
+                                rdfs:label "Textual parallel type"@en .
+
+
+###  https://otra-ontologies.com/ConnectiveOntology#ParallelinOtherLanguage
+ConnectiveOntology:ParallelinOtherLanguage rdf:type owl:Class ;
+                                           rdfs:subClassOf ConnectiveOntology:TextualParallel ;
+                                           rdfs:comment """Subcategory of a Textual Parallel which signifies that the object (the text where the connection is drawn towards) is in another language than the subject (the text the connection is drawn from). 
+
+Is aligned with SAWS predicate \"IsVersionInAnotherLanguageOf\" and can be combined with a Type assignment, which then replaces the predicates:
+
+'isVerbatimTranslationOf ', 'isVariantTranslationOf', and so forth."""@en ;
+                                           rdfs:label "Parallel in other language"@en .
+
+
+###  https://otra-ontologies.com/ConnectiveOntology#ParallelinSameLanguage
+ConnectiveOntology:ParallelinSameLanguage rdf:type owl:Class ;
+                                          rdfs:subClassOf ConnectiveOntology:TextualParallel ;
+                                          rdfs:comment """Subcategory of a Textual Parallel which signifies that the object (the text where the connection is drawn towards) is in the same language as the subject (the text the connection is drawn from). 
+
+Can be combined with a Type assignment such as \"VerbatimofText\" or 'VariantOfText' to express the SAWS predicates: 'isVerbatimOf ', 'isVariantOf', and so on."""@en ;
+                                          rdfs:label "Parallel in same Language"@en .
+
+
+###  https://otra-ontologies.com/ConnectiveOntology#RenderingOfText
+ConnectiveOntology:RenderingOfText rdf:type owl:Class ;
+                                   rdfs:subClassOf ConnectiveOntology:ParallelinSameLanguage ;
+                                   rdfs:comment """Subclass of a Textual parallel in the same language, which indicates that something is expressed \"in a related but different way\". Abstraction of the two SAWS subtypes \"closeRendering\" and \"looseRendering\". Defined as:
+
+\"This property specifies the source and target LinguisticObject involved (respectively) when rendering one LinguisticObject instance to express it in a related but different way (not necessarily in a different Language), resulting in a new LinguisticObject e.g. poetry into prose, or from one dialect to another, or a paraphrase being made.\""""@en ;
+                                   rdfs:label "Rendering of text"@en .
+
+
+###  https://otra-ontologies.com/ConnectiveOntology#Statement
+ConnectiveOntology:Statement rdf:type owl:Class ;
+                             rdfs:subClassOf lrmoo:F1_Work ;
+                             rdfs:comment "General, abstracted type of discursive statements, e.g. \"Muhammad was not a true prophet\" or \"Jesus was not truly crucified\", which can be realized in different concrete formulations."@en ;
+                             rdfs:label "Statement"@en .
+
+
+###  https://otra-ontologies.com/ConnectiveOntology#StatementExpression
+ConnectiveOntology:StatementExpression rdf:type owl:Class ;
+                                       rdfs:subClassOf lrmoo:F2_Expression ;
+                                       rdfs:comment "A concrete expression of an argument Archtype. Realised in statement formulations."@en ;
+                                       rdfs:label "Statement expression"@en .
+
+
+###  https://otra-ontologies.com/ConnectiveOntology#TextualParallel
+ConnectiveOntology:TextualParallel rdf:type owl:Class ;
+                                   rdfs:subClassOf hdn:LociParalleli ;
+                                   rdfs:comment "Subclass of a Connective Claim that indicates some textual similarity between the subject and the object, which can be specified by further subclasses and type assigments."@en ;
+                                   rdfs:label "Textual parallel"@en .
+
+
+###  https://otra-ontologies.com/ConnectiveOntology#TopicalParallel
+ConnectiveOntology:TopicalParallel rdf:type owl:Class ;
+                                   rdfs:subClassOf hdn:LociParalleli ;
+                                   rdfs:comment "Type of Connective Claim that signals a Topical Parallel between the subject and the object that thereby claims no textual overlap. Most Textual Parallels will also be Topical Parallels, but not vice versa."@en ;
+                                   rdfs:label "Topical parallel"@en .
+
+
+###  https://otra-ontologies.com/ConnectiveOntology#VariantOfText
+ConnectiveOntology:VariantOfText rdf:type owl:Class ;
+                                 rdfs:subClassOf ConnectiveOntology:VersionOfText .
+
+
+###  https://otra-ontologies.com/ConnectiveOntology#VerbatimOfText
+ConnectiveOntology:VerbatimOfText rdf:type owl:Class ;
+                                  rdfs:subClassOf ConnectiveOntology:VersionOfText .
+
+
+###  https://otra-ontologies.com/ConnectiveOntology#VersionOfText
+ConnectiveOntology:VersionOfText rdf:type owl:Class ;
+                                 rdfs:subClassOf ConnectiveOntology:ParallelinSameLanguage .
+
+
+###  https://otra-ontologies.com/ConnectiveOntology#explicitSignalling
+ConnectiveOntology:explicitSignalling rdf:type owl:Class ;
+                                      rdfs:subClassOf ConnectiveOntology:Citation_Signalling ;
+                                      rdfs:comment "Subclass of Citation Signalling, which indicates that the author of a text makes it explicit that some citation or re-use is happening. Can be further specified by types."@en ;
+                                      rdfs:label "Explicit signalling"@en .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  https://otra-ontologies.com/ConnectiveOntology#Allusion
+ConnectiveOntology:Allusion rdf:type owl:NamedIndividual ,
+                                     ConnectiveOntology:Citation_Signalling ;
+                            rdfs:comment "Type of Citation Signalling. The reader receives some hints that the text is a quotation, but the source is only alluded to."@en .
+
+
+###  https://otra-ontologies.com/ConnectiveOntology#CloseRenderingOfText
+ConnectiveOntology:CloseRenderingOfText rdf:type owl:NamedIndividual ,
+                                                 ConnectiveOntology:ParallelType ;
+                                        rdfs:comment """Type of Connective Claim that is aligned with the SAWS predicate \"isCloseRenderingOf\", which is defined as:
+
+\"This property specifies the source and target LinguisticObject involved (respectively) when rendering one LinguisticObject instance to express it in a related but different way (not necessarily in a different Language), resulting in a new LinguisticObject e.g. poetry into prose, or from one dialect to another, or a paraphrase being made.  This property indicates that the new LinguisticObject is a close rendering of the original LinguisticObject. This need not imply that one is a direct copy of the other, nor which is the earlier\"""" ;
+                                        rdfs:label "Close rendering of text"@en .
+
+
+###  https://otra-ontologies.com/ConnectiveOntology#LongerVersionOfText
+ConnectiveOntology:LongerVersionOfText rdf:type owl:NamedIndividual ,
+                                                ConnectiveOntology:ParallelType ;
+                                       rdfs:comment """Type of Textual Parallel that is aligned with the SAWS predicate \"isLongerVersionOf\", defined as:
+
+\"A LinguisticObject is related to another LinguisticObject in that it conveys the same ideas (FRBRoo: Work), but is expressed in an expanded or enhanced version of the text (FRBRoo: a different and longer Expression). This need not imply that one is a direct copy of the other, nor which is the earlier.\""""@en ;
+                                       rdfs:label "Longer version of text"@en .
+
+
+###  https://otra-ontologies.com/ConnectiveOntology#LooseRenderingOfText
+ConnectiveOntology:LooseRenderingOfText rdf:type owl:NamedIndividual ,
+                                                 ConnectiveOntology:ParallelType ;
+                                        rdfs:comment """Type of Textual Parallel that is aligned with the SAWS predicate \"isLooseRenderingOf \", defined as:
+
+\"This property specifies the source and target LinguisticObject involved (respectively) when rendering one LinguisticObject instance to express it in a related but different way (not necessarily in a different Language), resulting in a new LinguisticObject e.g. poetry into prose, or from one dialect to another, or a paraphrase being made. This property indicates that the new LinguisticObject is a loose rendering of the original LinguisticObject. This need not imply that one is a direct copy of the other, nor which is the earlier\""""@en ;
+                                        rdfs:label "Loose rendering of text"@en .
+
+
+###  https://otra-ontologies.com/ConnectiveOntology#NoSignalling
+ConnectiveOntology:NoSignalling rdf:type owl:NamedIndividual ,
+                                         ConnectiveOntology:Citation_Signalling ;
+                                rdfs:comment "Marks a case of text re-use or citation that is not marked as such, i.e. a silent citation or, in modern parlance, a plagiarism."@en ;
+                                rdfs:label "No signalling"@en .
+
+
+###  https://otra-ontologies.com/ConnectiveOntology#ShorterVersionOfText
+ConnectiveOntology:ShorterVersionOfText rdf:type owl:NamedIndividual ,
+                                                 ConnectiveOntology:ParallelType ;
+                                        rdfs:comment """Type to specify a Textual Parallel. Aligned with the SAWS predicate \"isShorterVersionOf\", defined as:
+
+\"A LinguisticObject is related to another LinguisticObject in that it conveys the same ideas (FRBRoo: Work), but is expressed in a more concise version (FRBRoo: a different and shorter Expression)\""""@en .
+
+
+###  https://otra-ontologies.com/ConnectiveOntology#StatementFormulation
+ConnectiveOntology:StatementFormulation rdf:type owl:NamedIndividual ,
+                                                 cidoc-crm:E55_Type .
+
+
+###  https://otra-ontologies.com/ConnectiveOntology#VariantOfText
+ConnectiveOntology:VariantOfText rdf:type owl:NamedIndividual ,
+                                          ConnectiveOntology:ParallelType .
+
+
+###  https://otra-ontologies.com/ConnectiveOntology#VerbatimOfText
+ConnectiveOntology:VerbatimOfText rdf:type owl:NamedIndividual ,
+                                           ConnectiveOntology:ParallelType .
+
+
+###  https://otra-ontologies.com/ConnectiveOntology#VersionOfText
+ConnectiveOntology:VersionOfText rdf:type owl:NamedIndividual ,
+                                          ConnectiveOntology:ParallelType .
+
+
+###  https://otra-ontologies.com/ConnectiveOntology#genericPersonalSignalling
+ConnectiveOntology:genericPersonalSignalling rdf:type owl:NamedIndividual ,
+                                                      ConnectiveOntology:explicitSignalling ;
+                                             rdfs:comment "Further specifies the signalling of a citation or quotation. Here, the signalling is generic, e.g., \"some people say\", \"a certain man\", or \"the stoics\"."@en .
+
+
+###  https://otra-ontologies.com/ConnectiveOntology#genericTextualSignalling
+ConnectiveOntology:genericTextualSignalling rdf:type owl:NamedIndividual ,
+                                                     ConnectiveOntology:explicitSignalling ;
+                                            rdfs:comment "Further specifies the signalling of a citation or quotation. Here, the signalling is generic and towards a text, e.g., \"as the bible says\", \"the Qur'an states\", or \"as scripture testifies\"."@en .
+
+
+###  https://otra-ontologies.com/ConnectiveOntology#precisePersonalSignalling
+ConnectiveOntology:precisePersonalSignalling rdf:type owl:NamedIndividual ,
+                                                      ConnectiveOntology:explicitSignalling ;
+                                             rdfs:comment "Further specifies the signalling of a citation or quotation. Here, the signalling is precise and related to a person, e.g., \"as Aristotle says\", or \"as David sings in the Psalms\"."@en .
+
+
+###  https://otra-ontologies.com/ConnectiveOntology#preciseTextualSignalling
+ConnectiveOntology:preciseTextualSignalling rdf:type owl:NamedIndividual ,
+                                                     ConnectiveOntology:explicitSignalling ;
+                                            rdfs:comment "Further specifies the signalling of a citation or quotation. Here, the signalling is precise and related to a text, e.g., \"as in Psalm 82, verse 13\", or \"in Aristotle's Metaphysics chapter 2\"."@en .
+
+
+###  https://otra-ontologies.com/data/Biblia_Sacra_Vulgata
+otradata:Biblia_Sacra_Vulgata rdf:type owl:NamedIndividual ,
+                                       lrmoo:F2_Expression ;
+                              rdfs:comment "The so-called 'Vulgate' became the standard Latin version of the bible during the middle ages and is an Expression of the Christian bible."@en .
+
+
+###  https://otra-ontologies.com/data/Edition_of_Epitome_Bellorum_Sacrorum_by_Canisius
+otradata:Edition_of_Epitome_Bellorum_Sacrorum_by_Canisius rdf:type owl:NamedIndividual ,
+                                                                   lrmoo:F3_Manifestation ;
+                                                          rdfs:comment "The edition of the 'Epitome bellorum sacrorum' as published by Henricus Canisius."@en .
+
+
+###  https://otra-ontologies.com/data/Epitome_Bellorum_Sacrorum
+otradata:Epitome_Bellorum_Sacrorum rdf:type owl:NamedIndividual ,
+                                            lrmoo:F1_Work ;
+                                   rdfs:comment "A work composed of various writings on the Holy Land from a Christian perspective."@en .
+
+
+###  https://otra-ontologies.com/data/Epitome_Version_of_Canisius_and_Basnage
+otradata:Epitome_Version_of_Canisius_and_Basnage rdf:type owl:NamedIndividual ,
+                                                          lrmoo:F2_Expression ;
+                                                 rdfs:comment "Expression of the work 'Epitome bellorum sacrorum' that is retained in at least two versions that are based on each other."@en .
+
+
+###  https://otra-ontologies.com/data/F._Gonzalez_Munoz_ed._Petrus_Tractatus_contra_Alchoranum
+otradata:F._Gonzalez_Munoz_ed._Petrus_Tractatus_contra_Alchoranum rdf:type owl:NamedIndividual ,
+                                                                           lrmoo:F2_Expression ;
+                                                                  rdfs:comment "Edition by Fernando Gonzalez-Munoz of Petrus de Pennis' Tractatus contra Alchoranum"@en .
+
+
+###  https://otra-ontologies.com/data/Jean-Marie_Merigoux_edition_of_Riccoldo_Contra_Legem_Sarracenorum
+otradata:Jean-Marie_Merigoux_edition_of_Riccoldo_Contra_Legem_Sarracenorum rdf:type owl:NamedIndividual ,
+                                                                                    lrmoo:F3_Manifestation ;
+                                                                           rdfs:comment "Edition of Riccoldo da Monte di Croce's 'Contra Legem Sarracenorum' by Jean-Marie Mérigoux, which is based on a manuscript revised by Riccoldo himself."@en .
+
+
+###  https://otra-ontologies.com/data/Petrus_de_Pennis_Tractatus_contra_Alchoranum
+otradata:Petrus_de_Pennis_Tractatus_contra_Alchoranum rdf:type owl:NamedIndividual ,
+                                                               lrmoo:F1_Work ;
+                                                      rdfs:comment "Work by Petrus de Pennis called 'Tractatus contra Alchoranum'."@en .
+
+
+###  https://otra-ontologies.com/data/Quran_34.28
+otradata:Quran_34.28 rdf:type owl:NamedIndividual ,
+                              cidoc-crm:E90_Symbolic_Object .
+
+
+###  https://otra-ontologies.com/data/Quran_4.171
+otradata:Quran_4.171 rdf:type owl:NamedIndividual ,
+                              cidoc-crm:E90_Symbolic_Object .
+
+
+###  https://otra-ontologies.com/data/TcA_B.14.11
+otradata:TcA_B.14.11 rdf:type owl:NamedIndividual ,
+                              cidoc-crm:E90_Symbolic_Object .
+
+
+###  https://otra-ontologies.com/data/TcA_B.4.9
+otradata:TcA_B.4.9 rdf:type owl:NamedIndividual ,
+                            cidoc-crm:E90_Symbolic_Object .
+
+
+###  https://otra-ontologies.com/data/The_Holy_Bible
+otradata:The_Holy_Bible rdf:type owl:NamedIndividual ,
+                                 lrmoo:F1_Work ;
+                        rdfs:comment "Work that Christian faith is based on. Exists in various versions and languages."@en .
+
+
+###  https://otra-ontologies.com/data/The_Holy_Quran
+otradata:The_Holy_Quran rdf:type owl:NamedIndividual ,
+                                 lrmoo:F1_Work ;
+                        rdfs:comment "Work that Muslim faith is based on."@en .
+
+
+###  https://otra-ontologies.com/data/Ps._118,_84-86_(Latin)
+<https://otra-ontologies.com/data/Ps._118,_84-86_(Latin)> rdf:type owl:NamedIndividual ,
+                                                                   cidoc-crm:E90_Symbolic_Object ;
+                                                          rdfs:comment "Psalm 118, verses 84-86"@en .
+
+
+###  https://otra-ontologies.com/data/Riccoldo_da_Monte_di_Croce's_Contra_Legem_Sarracenorum
+<https://otra-ontologies.com/data/Riccoldo_da_Monte_di_Croce's_Contra_Legem_Sarracenorum> rdf:type owl:NamedIndividual ,
+                                                                                                   lrmoo:F1_Work ;
+                                                                                          rdfs:comment "Work by the Florentine Dominican Riccoldo da Monte di Croce, called 'Contra legem Sarracenorum'. The work played a major influence in the Western perception of Islam and was translated in various languages."@en .
+
+
+###  https://otra-ontologies.com/data/Riccoldo_da_Monte_di_Croce's_CLS_in_the_latest_redaction_(Firenze,_Biblioteca_Nazionale,_8.1173)
+<https://otra-ontologies.com/data/Riccoldo_da_Monte_di_Croce's_CLS_in_the_latest_redaction_(Firenze,_Biblioteca_Nazionale,_8.1173)> rdf:type owl:NamedIndividual ,
+                                                                                                                                             lrmoo:F2_Expression ;
+                                                                                                                                    rdfs:comment "This expression of the work \"Contra Legem Sarracenorum\" was revised personally by Riccoldo da Monte di Croce and is found in the manuscript Florence, Biblioteca Nazionale under the shelf number 8.1173."@en .
+
+
+#################################################################
+#    Annotations
+#################################################################
+
+ConnectiveOntology:VariantOfText rdfs:comment """Subclass of Textual Version that indicates how closely related two passages of text are. Aligned with the SAWS predicate \"isVariantOf\", defined as:
+
+\"A LinguisticObject is a linguistically modified copy of a second LinguisticObject, in the same language/genre, and of the same length, with only small variation in use or order of words, e.g. one or two words substituted for another, or a connective inserted. This may or may not have different conceptual function. This need not imply that one is a direct copy of the other, nor which is the earlier\""""@en ;
+                                 rdfs:label "Variant of text"@en .
+
+
+ConnectiveOntology:VerbatimOfText rdfs:comment """Type of Textual Parallel that indicates a very close connection between subject and object. Aligned with the SAWS predicates
+
+\"isVerbatimOfText\": \"A LinguisticObject is a verbatim, word-for-word copy of another LinguisticObject. This need not imply that one is a direct copy of the other, nor which is the earlier\"
+\"isVerbatimTranslationOf \": \"word-for-word translation (ad pedem). This need not imply that one is a direct translation of the other, nor which is the earlier\""""@en ;
+                                  rdfs:label "Verbatim of text"@en .
+
+
+ConnectiveOntology:VersionOfText rdfs:comment """Subclass of a Textual Parallel that is aligned with the SAWS predicate \"isVersionOf\". Defined as:
+
+\"A LinguisticObject is a version in the same language of another LinguisticObject. This relates to the other object, but matches less closely than isVariantOf. This need not imply that one is a direct copy of the other, nor which is the earlier.\""""@en ;
+                                 rdfs:label "Version of text"@en .
+
+
+###  Generated by the OWL API (version 4.5.25.2023-02-15T19:15:49Z) https://github.com/owlcs/owlapi

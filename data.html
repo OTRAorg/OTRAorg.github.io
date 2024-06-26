@@ -1,0 +1,688 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light">
+  <head>
+    <meta charset="utf-8" />
+    <title>
+      OTRA - An Ontology for the Transmission and Re-Use of Argumentative
+      Pattern (OTRA) in Christian Muslim Religious Encounters
+    </title>
+
+    <!-- SEO Meta Tags -->
+    <meta
+      name="description"
+      content="An Ontology for the Transmission and Re-Use of Argumentative Pattern (OTRA) in Christian Muslim Religious Encounters"
+    />
+    <meta
+      name="keywords"
+      content="OTRA, Ontology for Transmission and Re-Use of Argumentative Pattern, Christian-Muslim religious encounters, Marie Skłodowska-Curie project, Jacob Langeloh, Jan Loop, University of Copenhagen, Christian-Muslim dialogues, interfaith arguments, Christian anti-Islamic polemics"
+    />
+    <meta name="author" content="Digital Humanities Craft" />
+    <meta name="author" content="Jacob Langeloh" />
+
+    <!-- Open Graph -->
+    <meta
+      property="og:title"
+      content="OTRA: Interfaith Dialogues and Argumentative Patterns"
+    />
+    <meta
+      property="og:description"
+      content="Discover the Marie Skłodowska-Curie project analyzing Christian-Muslim dialogues at the University of Copenhagen."
+    />
+    <meta property="og:image" content="https://example.com/og-image.jpg" />
+    <meta
+      property="og:url"
+      content="https://example.com/otra-project-overview"
+    />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="twitter:title"
+      content="OTRA: Interfaith Dialogues and Argumentative Patterns"
+    />
+    <meta
+      name="twitter:description"
+      content="Explore the OTRA project's insights into Christian-Muslim dialogues and argumentative structures."
+    />
+    <meta
+      name="twitter:image"
+      content="https://example.com/twitter-og-image.jpg"
+    />
+
+    <!-- Viewport -->
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Theme switcher (color modes) -->
+    <script src="assets/js/theme-switcher.js"></script>
+
+    <!-- Favicon and Touch Icons -->
+
+    <link rel="icon" type="image/svg+xml" href="/assets/favicon/favicon.svg" />
+    <link rel="icon" type="image/png" href="/assets/favicon/favicon.png" />
+
+    <!-- Vendor Styles -->
+    <link
+      rel="stylesheet"
+      media="screen"
+      href="assets/vendor/boxicons/css/boxicons.min.css"
+    />
+
+    <!-- Main Theme Styles + Bootstrap -->
+    <link rel="stylesheet" media="screen" href="assets/css/theme.min.css" />
+
+    <!-- Page loading styles -->
+    <style>
+      .page-loading {
+        position: fixed;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        -webkit-transition: all 0.4s 0.2s ease-in-out;
+        transition: all 0.4s 0.2s ease-in-out;
+        background-color: #fff;
+        opacity: 0;
+        visibility: hidden;
+        z-index: 9999;
+      }
+      [data-bs-theme="dark"] .page-loading {
+        background-color: #0b0f19;
+      }
+      .page-loading.active {
+        opacity: 1;
+        visibility: visible;
+      }
+      .page-loading-inner {
+        position: absolute;
+        top: 50%;
+        left: 0;
+        width: 100%;
+        text-align: center;
+        -webkit-transform: translateY(-50%);
+        transform: translateY(-50%);
+        -webkit-transition: opacity 0.2s ease-in-out;
+        transition: opacity 0.2s ease-in-out;
+        opacity: 0;
+      }
+      .page-loading.active > .page-loading-inner {
+        opacity: 1;
+      }
+      .page-loading-inner > span {
+        display: block;
+        font-size: 1rem;
+        font-weight: normal;
+        color: #9397ad;
+      }
+      [data-bs-theme="dark"] .page-loading-inner > span {
+        color: #fff;
+        opacity: 0.6;
+      }
+      .page-spinner {
+        display: inline-block;
+        width: 2.75rem;
+        height: 2.75rem;
+        margin-bottom: 0.75rem;
+        vertical-align: text-bottom;
+        border: 0.15em solid #b4b7c9;
+        border-right-color: transparent;
+        border-radius: 50%;
+        -webkit-animation: spinner 0.75s linear infinite;
+        animation: spinner 0.75s linear infinite;
+      }
+      [data-bs-theme="dark"] .page-spinner {
+        border-color: rgba(255, 255, 255, 0.4);
+        border-right-color: transparent;
+      }
+      @-webkit-keyframes spinner {
+        100% {
+          -webkit-transform: rotate(360deg);
+          transform: rotate(360deg);
+        }
+      }
+      @keyframes spinner {
+        100% {
+          -webkit-transform: rotate(360deg);
+          transform: rotate(360deg);
+        }
+      }
+    </style>
+
+    <!-- Page loading scripts -->
+    <script>
+      (function () {
+        window.onload = function () {
+          const preloader = document.querySelector(".page-loading");
+          preloader.classList.remove("active");
+          setTimeout(function () {
+            preloader.remove();
+          }, 1000);
+        };
+      })();
+    </script>
+  </head>
+
+  <!-- Body -->
+  <body>
+    <!-- Page loading spinner -->
+    <div class="page-loading active">
+      <div class="page-loading-inner">
+        <div class="page-spinner"></div>
+        <span>Loading...</span>
+      </div>
+    </div>
+
+    <!-- Page wrapper for sticky footer -->
+    <!-- Wraps everything except footer to push footer to the bottom of the page if there is little content -->
+    <main class="page-wrapper">
+      <!-- Navbar -->
+      <!-- Remove "navbar-sticky" class to make navigation bar scrollable with the page -->
+      <header class="header navbar navbar-expand-lg bg-light navbar-sticky">
+        <div class="container px-3">
+          <a href="/" class="navbar-brand pe-3" title="Home"
+            ><i class="bx bx-home-alt"></i
+          ></a>
+          <div id="navbarNav" class="offcanvas offcanvas-end">
+            <div class="offcanvas-header border-bottom">
+              <h5 class="offcanvas-title">Menu</h5>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="offcanvas"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div class="offcanvas-body">
+              <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                  <a href="/about" class="nav-link">About</a>
+                </li>
+                <li class="nav-item active">
+                  <a href="/data" class="nav-link">Data</a>
+                </li>
+                <li class="nav-item">
+                  <a href="/ontology" class="nav-link">Ontology</a>
+                </li>
+                <li class="nav-item">
+                  <a href="/tutorial" class="nav-link">Tutorial</a>
+                </li>
+                <!-- <li class="nav-item">
+                  <a href="/links" class="nav-link">Links</a>
+                </li> -->
+              </ul>
+            </div>
+          </div>
+          <div
+            class="form-check form-switch mode-switch pe-lg-1 ms-auto me-4"
+            data-bs-toggle="mode"
+          >
+            <input type="checkbox" class="form-check-input" id="theme-mode" />
+            <label class="form-check-label d-none d-sm-block" for="theme-mode"
+              >Light</label
+            >
+            <label class="form-check-label d-none d-sm-block" for="theme-mode"
+              >Dark</label
+            >
+          </div>
+          <button
+            type="button"
+            class="navbar-toggler"
+            data-bs-toggle="offcanvas"
+            data-bs-target="#navbarNav"
+            aria-controls="navbarNav"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+        </div>
+      </header>
+
+      <!-- About project -->
+      <section class="container py-5 my-1 my-md-4 my-lg-5">
+        <div class="row">
+          <div class="col-lg-9 mb-4 mb-lg-0">
+            <div class="pe-lg-4 me-lg-3 pe-xl-0 me-xl-0">
+              <h1 id="purpose-and-scope">Purpose and Scope</h1>
+              <p>
+                OTRA&#39;s ontology and datasets aim to represent intertextual
+                relations and argumentative statements within interreligious
+                encounters as Linked Data. Intertextual relations were
+                established on the basis of existing text editions in which
+                scholars claim that passages of the edited text is related to
+                some external content, often also text passages. To clarify
+                these claims, the connections were precisely located within both
+                the source and the target text. Argumentative statements were
+                the attributed to the text and linked to the specific passages
+                where they appear. Together, these Connective Claims and
+                Statements allow studying how scriptural citations were used to
+                argue in interreligious discourse, and how this changed over
+                time.
+              </p>
+              <h1 id="the-model">The Model</h1>
+              <h2 id="connective-claims">Connective Claims</h2>
+              <p>
+                <em>Connective Claims</em> are defined as follows:
+                <em
+                  >Through the speech act &#39;A&#39;, a scholar S claims (i.e.,
+                  expresses her belief and promises) that understanding of B can
+                  be enriched by considering C</em
+                >. A simple example is when a text contains the phrase &quot;In
+                the beginning was the word&quot;, and a scholar adds a footnote
+                indicating that our understanding can be enriched by comparing
+                it to John 1,1 from the Bible.
+              </p>
+              <p>
+                Each Connective Claim has a subject (B) and an object (C). The
+                subject is the text under discussion and belongs to the class
+                <em>TextFragment</em>. The object is the piece of information
+                intended to &quot;enrich our understanding&quot;. It is often
+                also a <em>TextFragment</em>, but it can be any other type of
+                information.
+              </p>
+              <p>
+                To provide a more nuanced assessment of the connection, one can
+                use subclasses of Connective Claim such as TextualParallel or
+                TopicalParallel, and assign a ParallelType.
+              </p>
+              <h2 id="positions">Positions</h2>
+              <p>
+                To situate a TextFragment within a text, it is assigned two
+                <em>Positions</em>: one indicating where it begins (fromPos) and
+                the other where it ends (toPos). Each Position has two
+                attributes: the textual unit (a lrm:Expression) it belongs to
+                and an offset (xsd:int), which indicates the specific part of
+                the unit where the position is located. For example, a position
+                might have the unit &quot;Ricc_CLS__B.4.3&quot; and an offset of
+                23, indicating the 23rd word of the 3rd paragraph of the 4th
+                chapter of <em>Contra Legem Sarracenorum</em>.
+              </p>
+              <p>
+                Works outside the
+                <a href="#primary-works" data-scroll="" data-scroll-offset="70"
+                  >primary sources studied</a
+                >
+                may have an offset based on how they are canonically cited. For
+                example, when quoting biblical passages, the book of the bible
+                is used as the Unit (e.g. John 1) and the verse as the Offset
+                (1).
+              </p>
+              <h2 id="identifiers-for-textual-units-paragraphs-text-fragments">
+                Identifiers for Textual Units (Paragraphs, Text Fragments)
+              </h2>
+              <p>
+                Fragments are situated in <em>Blocks</em> of text, often
+                corresponding to paragraphs (doco:paragraph). Blocks of texts
+                receive uniform identifiers in the format: WORK_ID__ +
+                &quot;B&quot; (for Block) + (Wider Unit, e.g. Chapter).(Narrower
+                Unit, e.g. Paragraph). For identification in printed texts, the
+                first words and the last words of a Block are provided with
+                otra:has_incipit and otra:has_explicit.
+              </p>
+              <p>
+                Text Fragments follow the same convention, but also include
+                their units, for example: Ricc_CLS__B.6.5_48-88. These fragments
+                can span multiple blocks.
+              </p>
+              <h2 id="statements">Statements</h2>
+              <p>
+                Argumentative statements are assigned a Statement ID and a
+                string that captures their content. To indicate where they occur
+                in a text, these statements are <em>otra:expressed_in</em> a
+                TextFragment, which again receives a Location.
+              </p>
+              <h1 id="use-of-external-vocabularies-and-standards">
+                Use of External Vocabularies and Standards
+              </h1>
+              <p>
+                CIDOC CRM and LRMoo function as the top level ontologies. For
+                modeling Connective Claims, I used the basic structure of data
+                from the
+                <a
+                  href="https://hdn.dantenetwork.it/documentation/index-en.html"
+                  >HypermediaDanteNetwork Ontology</a
+                >. To specify the types of Connective Claims, I integrated the
+                categories of intertextual re-use from
+                <a
+                  href="https://ancientwisdoms.ac.uk/method/ontology/index.html"
+                  >Sharing Ancient Wisdoms</a
+                >. Finally I added a vocabulary to describe whether and how an
+                author is signalling that they are quoting another author, which
+                is modelled after the categories of the
+                <a
+                  href="https://english.philhist.unibas.ch/en/research/research-projects/hyperhamlet/"
+                  >HyperHamlet</a
+                >
+                project (sadly unavailable nowadays).
+              </p>
+              <p>
+                Books of the Bible are standardized according to the Book
+                Identifiers of the
+                <a
+                  href="https://ubsicap.github.io/usfm/usfm3.0/identification/books.html"
+                  >United Bible Societies</a
+                >
+              </p>
+              <h1 id="data">Data</h1>
+              <h2 id="primary-works">Primary Works</h2>
+              <p>The primary works used in this project are the following:</p>
+              <table class="table table-striped">
+                <thead>
+                  <tr>
+                    <th>Author</th>
+                    <th>Work(s)</th>
+                    <th>Edition</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Riccoldo da Monte di Croce</td>
+                    <td><em>Contra Legem Sarracenorum</em></td>
+                    <td>
+                      <a
+                        href="https://www.e-theca.net/emiliopanella/riccoldo2/cls.htm"
+                        >Web-Edition by Emilio Panella</a
+                      >
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Petrus de Pennis</td>
+                    <td><em>Tractatus contra Alchoranum</em></td>
+                    <td>
+                      <a href="https://doi.org/10.13140/RG.2.2.19517.87521"
+                        >Preliminary edition by Fernando González-Muñoz</a
+                      >
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Anonymous</td>
+                    <td><em>Epitome bellorum Sacrorum</em></td>
+                    <td>
+                      <a href="TODO:zenodo"
+                        >Edition by Jacob Langeloh, Open Access</a
+                      >
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>John of Ragusa</td>
+                    <td>
+                      <em>Confessio fidei coram Saracenis</em> and
+                      <em
+                        >Fragmentum de comparatione legum, scilicet Evangelii et
+                        Alchorani</em
+                      >
+                    </td>
+                    <td>
+                      <a
+                        href="https://www.harrassowitz-verlag.de/titel_6457.ahtml"
+                        >Edition by Jacob Langeloh, Open Access</a
+                      >, Mirror
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Juan de Segovia</td>
+                    <td>
+                      <em
+                        >De gladio divini spiritus in corda mittendo
+                        Sarracenorum</em
+                      >
+                    </td>
+                    <td>
+                      <a
+                        href="https://www.harrassowitz-verlag.de/titel_4222.ahtml"
+                        >Edition by Ulli Roth</a
+                      >
+                      (full text not available)
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Nicholas of Cusa</td>
+                    <td><em>Cribratio Alkorani</em></td>
+                    <td>
+                      <a href="https://cusanus-portal.de/content/werke.php"
+                        >Cusanus Portal</a
+                      >,
+                      <a href="https://books.google.com/books?id=j9fWAAAAMAAJ"
+                        >Google Books</a
+                      >
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+
+              <h2 id="dataset-otraone">Dataset: OTRAone</h2>
+              <p>
+                The first dataset contains the Blocks of CLS and Connective
+                Claims from three works that are related to CLS, namely the
+                <em>Epitome bellorum sacrorum</em>, <em>Confessio fidei</em> und
+                <em>De comparatione legum</em> by John of Ragusa, and
+                <em>De gladio</em> by Juan de Segovia. The other parts will be
+                added over time.
+              </p>
+            </div>
+          </div>
+          <div class="col-lg-3 position-relative">
+            <div
+              class="sticky-top ms-xl-5 ms-lg-4 ps-xxl-4"
+              style="top: 105px !important"
+            >
+              <h6>Content:</h6>
+              <div class="mb-4 pb-lg-3">
+                <a
+                  href="#purpose-and-scope"
+                  data-scroll=""
+                  data-scroll-offset="10"
+                  class="fw-bold mb-2 d-block"
+                >
+                  Purpose and Scope
+                </a>
+                <a
+                  href="#the-model"
+                  data-scroll=""
+                  data-scroll-offset="20"
+                  class="fw-bold mb-2 d-block"
+                >
+                  The Model
+                </a>
+                <a
+                  href="#connective-claims"
+                  data-scroll=""
+                  data-scroll-offset="70"
+                  class="mb-2 d-block"
+                >
+                  Connective Claims
+                </a>
+                <a
+                  href="#positions"
+                  data-scroll=""
+                  data-scroll-offset="70"
+                  class="mb-2 d-block"
+                >
+                  Positions
+                </a>
+                <a
+                  href="#identifiers-for-textual-units-paragraphs-text-fragments"
+                  data-scroll=""
+                  data-scroll-offset="70"
+                  class="mb-2 d-block"
+                >
+                  Identifiers for Textual Units (Paragraphs, Text Fragments)
+                </a>
+                <a
+                  href="#statements"
+                  data-scroll=""
+                  data-scroll-offset="70"
+                  class="mb-2 d-block"
+                >
+                  Statements
+                </a>
+                <a
+                  href="#use-of-external-vocabularies-and-standards"
+                  data-scroll=""
+                  data-scroll-offset="70"
+                  class="fw-bold mb-2 d-block"
+                >
+                  Use of External Vocabularies and Standards
+                </a>
+                <a
+                  href="#data"
+                  data-scroll=""
+                  data-scroll-offset="70"
+                  class="fw-bold mb-2 d-block"
+                >
+                  Data
+                </a>
+                <a
+                  href="#primary-works"
+                  data-scroll=""
+                  data-scroll-offset="70"
+                  class="mb-2 d-block"
+                >
+                  Primary Works
+                </a>
+                <a
+                  href="#dataset-otraone"
+                  data-scroll=""
+                  data-scroll-offset="70"
+                  class="mb-2 d-block"
+                >
+                  Dataset: OTRAone
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer bg-secondary pt-5 pb-4 pb-lg-5">
+      <div class="container pt-lg-4">
+        <div class="row pb-5">
+          <div class="col-lg-5 col-md-7">
+            <div class="navbar-brand text-dark p-0 me-0 mb-3 mb-lg-4">OTRA</div>
+            <p class="fs-sm">
+              OTRA - An Ontology for the Transmission and Re-Use of
+              Argumentative Pattern in Christian Muslim Religious Encounters
+            </p>
+            <div class="d-flex justify-content-start align-items-center">
+              <img
+                src="assets/img/EN_fundedbyEU_VERTICAL_RGB_POS.png"
+                alt="Funded by the EU"
+                class="img-fluid me-4"
+                style="width: 150px"
+              />
+              <img
+                src="assets/img/logo-euqu.png"
+                alt="EUQU Project Logo"
+                class="img-fluid me-4"
+                style="width: 150px"
+              />
+              <img
+                src="assets/img/ku_logo_uk_v.png"
+                alt="KU University Logo"
+                class="img-fluid"
+                style="width: 120px"
+              />
+            </div>
+          </div>
+          <div
+            class="col-xl-5 col-lg-6 col-md-4 offset-xl-2 offset-md-1 pt-4 pt-md-1 pt-lg-0"
+          >
+            <div id="footer-links" class="row">
+              <div class="col-lg-4">
+                <h6 class="mb-2">
+                  <a
+                    href="#useful-links"
+                    class="d-block text-dark dropdown-toggle d-lg-none py-2"
+                    data-bs-toggle="collapse"
+                    >Sitemap</a
+                  >
+                </h6>
+                <div
+                  id="useful-links"
+                  class="collapse d-lg-block"
+                  data-bs-parent="#footer-links"
+                >
+                  <ul class="nav flex-column pb-lg-1 mb-lg-3">
+                    <li class="nav-item">
+                      <a href="#" class="nav-link d-inline-block px-0 pt-1 pb-2"
+                        >Home</a
+                      >
+                    </li>
+                    <li class="nav-item">
+                      <a href="#" class="nav-link d-inline-block px-0 pt-1 pb-2"
+                        >About</a
+                      >
+                    </li>
+                    <li class="nav-item">
+                      <a href="#" class="nav-link d-inline-block px-0 pt-1 pb-2"
+                        >Data</a
+                      >
+                    </li>
+                    <li class="nav-item">
+                      <a href="#" class="nav-link d-inline-block px-0 pt-1 pb-2"
+                        >Tutorial</a
+                      >
+                    </li>
+                    <li class="nav-item">
+                      <a href="#" class="nav-link d-inline-block px-0 pt-1 pb-2"
+                        >Links</a
+                      >
+                    </li>
+                  </ul>
+                </div>
+              </div>
+
+              <div class="col-xl-8 col-lg-8 pt-2 pt-lg-0">
+                <h6 class="mb-2">Contact</h6>
+                <a href="mailto:jacob.langeloh@teol.ku.dk" class="fw-medium"
+                  >jacob.langeloh@teol.ku.dk</a
+                >
+                <ul class="nav flex-column mb-2 mb-lg-0">
+                  <li class="nav-item">
+                    <a
+                      href="/imprint"
+                      class="nav-link d-inline-block px-0 pt-1 pb-2"
+                      >Imprint</a
+                    >
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+        <p
+          class="nav d-block fs-xs text-center text-md-start pb-2 pb-lg-0 mb-0"
+        >
+          Made with
+          <i
+            class="bx bx-heart d-inline-block fs-lg text-gradient-primary align-middle mt-n1 mx-1"
+          >
+          </i>
+          by
+          <a
+            href="https://dhcraft.org"
+            class="text-muted"
+            target="_blank"
+            rel="noopener"
+            >DH Craft</a
+          >
+        </p>
+      </div>
+    </footer>
+
+    <!-- Back to top button -->
+    <a href="#top" class="btn-scroll-top" data-scroll>
+      <span class="btn-scroll-top-tooltip text-muted fs-sm me-2">Top</span>
+      <i class="btn-scroll-top-icon bx bx-chevron-up"></i>
+    </a>
+
+    <!-- Vendor Scripts -->
+    <script src="assets/vendor/jarallax/dist/jarallax.min.js"></script>
+
+    <!-- Main Theme Script -->
+    <script src="assets/js/theme.min.js"></script>
+  </body>
+</html>

@@ -1,0 +1,2949 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light">
+  <head>
+    <meta charset="utf-8" />
+    <title>
+      OTRA - An Ontology for the Transmission and Re-Use of Argumentative
+      Pattern (OTRA) in Christian Muslim Religious Encounters
+    </title>
+
+    <!-- SEO Meta Tags -->
+    <meta
+      name="description"
+      content="An Ontology for the Transmission and Re-Use of Argumentative Pattern (OTRA) in Christian Muslim Religious Encounters"
+    />
+    <meta
+      name="keywords"
+      content="OTRA, Ontology for Transmission and Re-Use of Argumentative Pattern, Christian-Muslim religious encounters, Marie Skłodowska-Curie project, Jacob Langeloh, Jan Loop, University of Copenhagen, Christian-Muslim dialogues, interfaith arguments, Christian anti-Islamic polemics"
+    />
+    <meta name="author" content="Digital Humanities Craft" />
+    <meta name="author" content="Jacob Langeloh" />
+
+    <!-- Open Graph -->
+    <meta
+      property="og:title"
+      content="OTRA: Interfaith Dialogues and Argumentative Patterns"
+    />
+    <meta
+      property="og:description"
+      content="Discover the Marie Skłodowska-Curie project analyzing Christian-Muslim dialogues at the University of Copenhagen."
+    />
+    <meta property="og:image" content="https://example.com/og-image.jpg" />
+    <meta
+      property="og:url"
+      content="https://example.com/otra-project-overview"
+    />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="twitter:title"
+      content="OTRA: Interfaith Dialogues and Argumentative Patterns"
+    />
+    <meta
+      name="twitter:description"
+      content="Explore the OTRA project's insights into Christian-Muslim dialogues and argumentative structures."
+    />
+    <meta
+      name="twitter:image"
+      content="https://example.com/twitter-og-image.jpg"
+    />
+
+    <!-- Viewport -->
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Theme switcher (color modes) -->
+    <script src="assets/js/theme-switcher.js"></script>
+
+    <!-- Favicon and Touch Icons -->
+
+    <link rel="icon" type="image/svg+xml" href="/assets/favicon/favicon.svg" />
+    <link rel="icon" type="image/png" href="/assets/favicon/favicon.png" />
+
+    <!-- Vendor Styles -->
+    <link
+      rel="stylesheet"
+      media="screen"
+      href="assets/vendor/boxicons/css/boxicons.min.css"
+    />
+
+    <!-- Main Theme Styles + Bootstrap -->
+    <link rel="stylesheet" media="screen" href="assets/css/theme.min.css" />
+
+    <!-- Page loading styles -->
+    <style>
+      .page-loading {
+        position: fixed;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        -webkit-transition: all 0.4s 0.2s ease-in-out;
+        transition: all 0.4s 0.2s ease-in-out;
+        background-color: #fff;
+        opacity: 0;
+        visibility: hidden;
+        z-index: 9999;
+      }
+      [data-bs-theme="dark"] .page-loading {
+        background-color: #0b0f19;
+      }
+      .page-loading.active {
+        opacity: 1;
+        visibility: visible;
+      }
+      .page-loading-inner {
+        position: absolute;
+        top: 50%;
+        left: 0;
+        width: 100%;
+        text-align: center;
+        -webkit-transform: translateY(-50%);
+        transform: translateY(-50%);
+        -webkit-transition: opacity 0.2s ease-in-out;
+        transition: opacity 0.2s ease-in-out;
+        opacity: 0;
+      }
+      .page-loading.active > .page-loading-inner {
+        opacity: 1;
+      }
+      .page-loading-inner > span {
+        display: block;
+        font-size: 1rem;
+        font-weight: normal;
+        color: #9397ad;
+      }
+      [data-bs-theme="dark"] .page-loading-inner > span {
+        color: #fff;
+        opacity: 0.6;
+      }
+      .page-spinner {
+        display: inline-block;
+        width: 2.75rem;
+        height: 2.75rem;
+        margin-bottom: 0.75rem;
+        vertical-align: text-bottom;
+        border: 0.15em solid #b4b7c9;
+        border-right-color: transparent;
+        border-radius: 50%;
+        -webkit-animation: spinner 0.75s linear infinite;
+        animation: spinner 0.75s linear infinite;
+      }
+      [data-bs-theme="dark"] .page-spinner {
+        border-color: rgba(255, 255, 255, 0.4);
+        border-right-color: transparent;
+      }
+      @-webkit-keyframes spinner {
+        100% {
+          -webkit-transform: rotate(360deg);
+          transform: rotate(360deg);
+        }
+      }
+      @keyframes spinner {
+        100% {
+          -webkit-transform: rotate(360deg);
+          transform: rotate(360deg);
+        }
+      }
+    </style>
+
+    <!-- Page loading scripts -->
+    <script>
+      (function () {
+        window.onload = function () {
+          const preloader = document.querySelector(".page-loading");
+          preloader.classList.remove("active");
+          setTimeout(function () {
+            preloader.remove();
+          }, 1000);
+        };
+      })();
+    </script>
+  </head>
+
+  <!-- Body -->
+  <body>
+    <!-- Page loading spinner -->
+    <div class="page-loading active">
+      <div class="page-loading-inner">
+        <div class="page-spinner"></div>
+        <span>Loading...</span>
+      </div>
+    </div>
+
+    <!-- Page wrapper for sticky footer -->
+    <!-- Wraps everything except footer to push footer to the bottom of the page if there is little content -->
+    <main class="page-wrapper">
+      <!-- Navbar -->
+      <!-- Remove "navbar-sticky" class to make navigation bar scrollable with the page -->
+      <header class="header navbar navbar-expand-lg bg-light navbar-sticky">
+        <div class="container px-3">
+          <a href="/" class="navbar-brand pe-3" title="Home"
+            ><i class="bx bx-home-alt"></i
+          ></a>
+          <div id="navbarNav" class="offcanvas offcanvas-end">
+            <div class="offcanvas-header border-bottom">
+              <h5 class="offcanvas-title">Menu</h5>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="offcanvas"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div class="offcanvas-body">
+              <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                  <a href="/about" class="nav-link">About</a>
+                </li>
+                <li class="nav-item">
+                  <a href="/data" class="nav-link">Data</a>
+                </li>
+                <li class="nav-item active">
+                  <a href="/ontology" class="nav-link">Ontology</a>
+                </li>
+                <li class="nav-item">
+                  <a href="/tutorial" class="nav-link">Tutorial</a>
+                </li>
+                <!-- <li class="nav-item">
+                  <a href="/links" class="nav-link">Links</a>
+                </li> -->
+              </ul>
+            </div>
+          </div>
+          <div
+            class="form-check form-switch mode-switch pe-lg-1 ms-auto me-4"
+            data-bs-toggle="mode"
+          >
+            <input type="checkbox" class="form-check-input" id="theme-mode" />
+            <label class="form-check-label d-none d-sm-block" for="theme-mode"
+              >Light</label
+            >
+            <label class="form-check-label d-none d-sm-block" for="theme-mode"
+              >Dark</label
+            >
+          </div>
+          <button
+            type="button"
+            class="navbar-toggler"
+            data-bs-toggle="offcanvas"
+            data-bs-target="#navbarNav"
+            aria-controls="navbarNav"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+        </div>
+      </header>
+
+      <!-- About project -->
+      <section class="container py-5 my-1 my-md-4 my-lg-5">
+        <div class="row">
+          <div class="col-lg-9 mb-4 mb-lg-0">
+            <div class="pe-lg-4 me-lg-3 pe-xl-0 me-xl-0">
+              <h1 id="metadata">Metadata</h1>
+              <p>
+                The Ontology for the Transmission and Re-Use of Argumentative
+                Patterns (OTRA) allows to explicitly represent connections
+                between texts and arguments. OTRA is licensed under a Creative
+                Commons Attribution-ShareAlike 4.0 International License.
+                Created by Jacob Langeloh, based on HDN by Carlo Meghini,
+                Valentina Bartalesi, Daniele Metilli, Filippo Benedetti and on
+                the SAWS ontology by Anna Jordanous (knowledge modelling and
+                CTS), Faith Lawrence, Keith Lawrence (developers) and Charlotte
+                Tupman. Date: 2024-06-24
+              </p>
+              <p><a href="connective_ontology.ttl" download class="btn btn-outline-primary my-2" type="button" aria-label="Download">
+                <i class="bx bx-download fs-lg me-2"></i> Download the Ontology
+              </a></p>
+
+              <h1 id="classes">Classes</h1>
+              <h2 id="cidoc-crm-E18_Physical_Thing">E18 Physical Thing</h2>
+              <div class="table-responsive">
+                <table class="table">
+                  <tbody>
+                    <tr class="d-flex">
+                      <td
+                        class="col-2 fw-bold text-truncate"
+                        title="Description"
+                      >
+                        Description
+                      </td>
+                      <td class="col-10">
+                        Physical Thing as defined by CIDOC CRM.
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+
+              <h2 id="cidoc-crm-E19_Physical_Object">E19 Physical Object</h2>
+              <div class="table-responsive">
+                <table class="table">
+                  <tbody>
+                    <tr class="d-flex">
+                      <td
+                        class="col-2 fw-bold text-truncate"
+                        title="Subclass of"
+                      >
+                        Subclass of
+                      </td>
+                      <td class="col-10">
+                        <a href="#cidoc-crm-E18_Physical_Thing"
+                          >E18 Physical Thing</a
+                        >
+                      </td>
+                    </tr>
+                    <tr class="d-flex">
+                      <td
+                        class="col-2 fw-bold text-truncate"
+                        title="Description"
+                      >
+                        Description
+                      </td>
+                      <td class="col-10">
+                        Physical Object as defined by CIDOC CRM.
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+
+              <h2 id="cidoc-crm-E1_CRM_Entity">E1 CRM Entity</h2>
+              <div class="table-responsive">
+                <table class="table">
+                  <tbody>
+                    <tr class="d-flex">
+                      <td
+                        class="col-2 fw-bold text-truncate"
+                        title="Description"
+                      >
+                        Description
+                      </td>
+                      <td class="col-10">
+                        CRM Entity as defined by CIDOC CRM.
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+
+              <h2 id="cidoc-crm-E20_Biological_Object">
+                E20 Biological Object
+              </h2>
+              <div class="table-responsive">
+                <table class="table">
+                  <tbody>
+                    <tr class="d-flex">
+                      <td
+                        class="col-2 fw-bold text-truncate"
+                        title="Subclass of"
+                      >
+                        Subclass of
+                      </td>
+                      <td class="col-10">
+                        <a href="#cidoc-crm-E19_Physical_Object"
+                          >E19 Physical Object</a
+                        >
+                      </td>
+                    </tr>
+                    <tr class="d-flex">
+                      <td
+                        class="col-2 fw-bold text-truncate"
+                        title="Description"
+                      >
+                        Description
+                      </td>
+                      <td class="col-10">
+                        Biological Object as defined by CIDOC CRM.
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+
+              <h2 id="cidoc-crm-E33_Linguistic_Object">
+                E33 Linguistic Object
+              </h2>
+              <div class="table-responsive">
+                <table class="table">
+                  <tbody>
+                    <tr class="d-flex">
+                      <td
+                        class="col-2 fw-bold text-truncate"
+                        title="Description"
+                      >
+                        Description
+                      </td>
+                      <td class="col-10">
+                        Linguistic Object as defined by CIDOC CRM.
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+
+              <h2 id="cidoc-crm-E36_Visual_Item">E36 Visual Item</h2>
+              <div class="table-responsive">
+                <table class="table">
+                  <tbody>
+                    <tr class="d-flex">
+                      <td
+                        class="col-2 fw-bold text-truncate"
+                        title="Subclass of"
+                      >
+                        Subclass of
+                      </td>
+                      <td class="col-10">
+                        <a href="#cidoc-crm-E33_Linguistic_Object"
+                          >E33 Linguistic Object</a
+                        >
+                      </td>
+                    </tr>
+                    <tr class="d-flex">
+                      <td
+                        class="col-2 fw-bold text-truncate"
+                        title="Description"
+                      >
+                        Description
+                      </td>
+                      <td class="col-10">
+                        Visual Item as defined by CIDOC CRM.
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+
+              <h2 id="cidoc-crm-E39_Actor">E39 Actor</h2>
+              <div class="table-responsive">
+                <table class="table">
+                  <tbody>
+                    <tr class="d-flex">
+                      <td
+                        class="col-2 fw-bold text-truncate"
+                        title="Description"
+                      >
+                        Description
+                      </td>
+                      <td class="col-10">Actor as defined by CIDOC CRM.</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+
+              <h2 id="cidoc-crm-E4_Period">E4 Period</h2>
+              <div class="table-responsive">
+                <table class="table">
+                  <tbody>
+                    <tr class="d-flex">
+                      <td
+                        class="col-2 fw-bold text-truncate"
+                        title="Description"
+                      >
+                        Description
+                      </td>
+                      <td class="col-10">Period as defined by CIDOC CRM.</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+
+              <h2 id="cidoc-crm-E52_Time-Span">E52 Time-Span</h2>
+              <div class="table-responsive">
+                <table class="table">
+                  <tbody>
+                    <tr class="d-flex">
+                      <td
+                        class="col-2 fw-bold text-truncate"
+                        title="Description"
+                      >
+                        Description
+                      </td>
+                      <td class="col-10">Time-Span as defined by CIDOC CRM.</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+
+              <h2 id="cidoc-crm-E53_Place">E53 Place</h2>
+              <div class="table-responsive">
+                <table class="table">
+                  <tbody>
+                    <tr class="d-flex">
+                      <td
+                        class="col-2 fw-bold text-truncate"
+                        title="Description"
+                      >
+                        Description
+                      </td>
+                      <td class="col-10">Place as defined by CIDOC CRM.</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+
+              <h2 id="cidoc-crm-E54_Dimension">E54 Dimension</h2>
+              <div class="table-responsive">
+                <table class="table">
+                  <tbody>
+                    <tr class="d-flex">
+                      <td
+                        class="col-2 fw-bold text-truncate"
+                        title="Description"
+                      >
+                        Description
+                      </td>
+                      <td class="col-10">Dimension as defined by CIDOC CRM.</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+
+              <h2 id="cidoc-crm-E55_Type">E55 Type</h2>
+              <div class="table-responsive">
+                <table class="table">
+                  <tbody>
+                    <tr class="d-flex">
+                      <td
+                        class="col-2 fw-bold text-truncate"
+                        title="Description"
+                      >
+                        Description
+                      </td>
+                      <td class="col-10">Type as defined by CIDOC CRM.</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+
+              <h2 id="cidoc-crm-E5_Event">E5 Event</h2>
+              <div class="table-responsive">
+                <table class="table">
+                  <tbody>
+                    <tr class="d-flex">
+                      <td
+                        class="col-2 fw-bold text-truncate"
+                        title="Description"
+                      >
+                        Description
+                      </td>
+                      <td class="col-10">Event as defined by CIDOC CRM.</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+
+              <h2 id="cidoc-crm-E70_Thing">E70 Thing</h2>
+              <div class="table-responsive">
+                <table class="table">
+                  <tbody>
+                    <tr class="d-flex">
+                      <td
+                        class="col-2 fw-bold text-truncate"
+                        title="Description"
+                      >
+                        Description
+                      </td>
+                      <td class="col-10">Thing as defined by CIDOC CRM.</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+
+              <h2 id="cidoc-crm-E71_Human-Made_Thing">E71 Human-Made Thing</h2>
+              <div class="table-responsive">
+                <table class="table">
+                  <tbody>
+                    <tr class="d-flex">
+                      <td
+                        class="col-2 fw-bold text-truncate"
+                        title="Subclass of"
+                      >
+                        Subclass of
+                      </td>
+                      <td class="col-10">
+                        <a href="#cidoc-crm-E70_Thing">E70 Thing</a>
+                      </td>
+                    </tr>
+                    <tr class="d-flex">
+                      <td
+                        class="col-2 fw-bold text-truncate"
+                        title="Description"
+                      >
+                        Description
+                      </td>
+                      <td class="col-10">
+                        Human-Made Thing as defined by CIDOC CRM.
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+
+              <h2 id="cidoc-crm-E73_Information_Object">
+                E73 Information Object
+              </h2>
+              <div class="table-responsive">
+                <table class="table">
+                  <tbody>
+                    <tr class="d-flex">
+                      <td
+                        class="col-2 fw-bold text-truncate"
+                        title="Description"
+                      >
+                        Description
+                      </td>
+                      <td class="col-10">
+                        Information Object as defined by CIDOC CRM.
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+
+              <h2 id="cidoc-crm-E89_Propositional_Object">
+                E89 Propositional Object
+              </h2>
+              <div class="table-responsive">
+                <table class="table">
+                  <tbody>
+                    <tr class="d-flex">
+                      <td
+                        class="col-2 fw-bold text-truncate"
+                        title="Description"
+                      >
+                        Description
+                      </td>
+                      <td class="col-10">
+                        Propositional Object as defined by CIDOC CRM.
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+
+              <h2 id="cidoc-crm-E90_Symbolic_Object">E90 Symbolic Object</h2>
+              <div class="table-responsive">
+                <table class="table">
+                  <tbody>
+                    <tr class="d-flex">
+                      <td
+                        class="col-2 fw-bold text-truncate"
+                        title="Description"
+                      >
+                        Description
+                      </td>
+                      <td class="col-10">
+                        Symbolic Object as defined by CIDOC CRM.
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+
+              <h2 id="hdn-ExternalSupport">External Support</h2>
+              <div class="table-responsive">
+                <table class="table">
+                  <tbody>
+                    <tr class="d-flex">
+                      <td
+                        class="col-2 fw-bold text-truncate"
+                        title="Subclass of"
+                      >
+                        Subclass of
+                      </td>
+                      <td class="col-10">
+                        <a href="#ConnectiveOntology-ConnectiveClaim"
+                          >Connective Claim</a
+                        >
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+
+              <h2 id="hdn-LociParalleli">Loci Paralleli</h2>
+              <div class="table-responsive">
+                <table class="table">
+                  <tbody>
+                    <tr class="d-flex">
+                      <td
+                        class="col-2 fw-bold text-truncate"
+                        title="Subclass of"
+                      >
+                        Subclass of
+                      </td>
+                      <td class="col-10">
+                        <a href="#ConnectiveOntology-ConnectiveClaim"
+                          >Connective Claim</a
+                        >
+                      </td>
+                    </tr>
+                    <tr class="d-flex">
+                      <td
+                        class="col-2 fw-bold text-truncate"
+                        title="Description"
+                      >
+                        Description
+                      </td>
+                      <td class="col-10">
+                        General class to express that a text fragment bears
+                        similarity to another thing.
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+
+              <h2 id="hdn-Position">Position</h2>
+              <div class="table-responsive">
+                <table class="table">
+                  <tbody>
+                    <tr class="d-flex">
+                      <td
+                        class="col-2 fw-bold text-truncate"
+                        title="Description"
+                      >
+                        Description
+                      </td>
+                      <td class="col-10">Position as defined in HDN.</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+
+              <h2 id="hdn-Reference">Reference</h2>
+              <div class="table-responsive">
+                <table class="table">
+                  <tbody>
+                    <tr class="d-flex">
+                      <td
+                        class="col-2 fw-bold text-truncate"
+                        title="Equivalent Class"
+                      >
+                        Equivalent Class
+                      </td>
+                      <td class="col-10">
+                        <a href="#ConnectiveOntology-ConnectiveClaim"
+                          >Connective Claim</a
+                        >
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+
+              <h2 id="hdn-Sentence">Sentence</h2>
+              <div class="table-responsive">
+                <table class="table">
+                  <tbody>
+                    <tr class="d-flex">
+                      <td
+                        class="col-2 fw-bold text-truncate"
+                        title="Description"
+                      >
+                        Description
+                      </td>
+                      <td class="col-10">Sentence as defined in HDN.</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+
+              <h2 id="hdn-Subject-ObjectRelationship">
+                Subject-Object Relationship
+              </h2>
+              <div class="table-responsive">
+                <table class="table">
+                  <tbody>
+                    <tr class="d-flex">
+                      <td
+                        class="col-2 fw-bold text-truncate"
+                        title="Description"
+                      >
+                        Description
+                      </td>
+                      <td class="col-10">
+                        Subject-Object Relationship as defined in HDN.
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+
+              <h2 id="hdn-TextFragment">Text Fragment</h2>
+              <div class="table-responsive">
+                <table class="table">
+                  <tbody>
+                    <tr class="d-flex">
+                      <td
+                        class="col-2 fw-bold text-truncate"
+                        title="Description"
+                      >
+                        Description
+                      </td>
+                      <td class="col-10">Text Fragment as defined in HDN.</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+
+              <h2 id="ConnectiveOntology-Citation_Signalling">
+                Citation Signalling
+              </h2>
+              <div class="table-responsive">
+                <table class="table">
+                  <tbody>
+                    <tr class="d-flex">
+                      <td
+                        class="col-2 fw-bold text-truncate"
+                        title="Subclass of"
+                      >
+                        Subclass of
+                      </td>
+                      <td class="col-10">
+                        <a href="#cidoc-crm-E55_Type">E55 Type</a>
+                      </td>
+                    </tr>
+                    <tr class="d-flex">
+                      <td
+                        class="col-2 fw-bold text-truncate"
+                        title="Description"
+                      >
+                        Description
+                      </td>
+                      <td class="col-10">
+                        Denotes the type of textual signalling, i.e. whether or
+                        not the text tells us it is referring to something
+                        external of itself.
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+
+              <h2 id="ConnectiveOntology-Claim">Claim</h2>
+              <div class="table-responsive">
+                <table class="table">
+                  <tbody>
+                    <tr class="d-flex">
+                      <td
+                        class="col-2 fw-bold text-truncate"
+                        title="Subclass of"
+                      >
+                        Subclass of
+                      </td>
+                      <td class="col-10">
+                        <a href="#cidoc-crm-E73_Information_Object"
+                          >E73 Information Object</a
+                        >
+                      </td>
+                    </tr>
+                    <tr class="d-flex">
+                      <td
+                        class="col-2 fw-bold text-truncate"
+                        title="Description"
+                      >
+                        Description
+                      </td>
+                      <td class="col-10">
+                        A speech act that includes assertion by the speaker that
+                        they consider this utterance to be true.
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+
+              <h2 id="ConnectiveOntology-Comment">Comment</h2>
+              <div class="table-responsive">
+                <table class="table">
+                  <tbody>
+                    <tr class="d-flex">
+                      <td
+                        class="col-2 fw-bold text-truncate"
+                        title="Subclass of"
+                      >
+                        Subclass of
+                      </td>
+                      <td class="col-10">
+                        <a href="#ConnectiveOntology-ConnectiveClaim"
+                          >Connective Claim</a
+                        >
+                      </td>
+                    </tr>
+                    <tr class="d-flex">
+                      <td
+                        class="col-2 fw-bold text-truncate"
+                        title="Description"
+                      >
+                        Description
+                      </td>
+                      <td class="col-10">
+                        Comment added by an editor which connects the subject to
+                        a certain interpretation without pointing to an external
+                        resource.
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+
+              <h2 id="ConnectiveOntology-ConnectiveClaim">Connective Claim</h2>
+              <div class="table-responsive">
+                <table class="table">
+                  <tbody>
+                    <tr class="d-flex">
+                      <td
+                        class="col-2 fw-bold text-truncate"
+                        title="Subclass of"
+                      >
+                        Subclass of
+                      </td>
+                      <td class="col-10">
+                        <a href="#ConnectiveOntology-Claim">Claim</a>
+                      </td>
+                    </tr>
+                    <tr class="d-flex">
+                      <td
+                        class="col-2 fw-bold text-truncate"
+                        title="Description"
+                      >
+                        Description
+                      </td>
+                      <td class="col-10">
+                        A Connective Claim proposes that "knowledge about x can
+                        be enriched through considering y", where x is the
+                        subject of the claim (generally a text passage) and y is
+                        the object of the claim (a text passage, a motif, a
+                        location).
+                      </td>
+                    </tr>
+                    <tr class="d-flex">
+                      <td
+                        class="col-2 fw-bold text-truncate"
+                        title="Equivalent Class"
+                      >
+                        Equivalent Class
+                      </td>
+                      <td class="col-10">
+                        <a href="#hdn-Reference">Reference</a>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+
+              <h2 id="ConnectiveOntology-ParallelType">Parallel Type</h2>
+              <div class="table-responsive">
+                <table class="table">
+                  <tbody>
+                    <tr class="d-flex">
+                      <td
+                        class="col-2 fw-bold text-truncate"
+                        title="Subclass of"
+                      >
+                        Subclass of
+                      </td>
+                      <td class="col-10">
+                        <a href="#cidoc-crm-E55_Type">E55 Type</a>
+                      </td>
+                    </tr>
+                    <tr class="d-flex">
+                      <td
+                        class="col-2 fw-bold text-truncate"
+                        title="Description"
+                      >
+                        Description
+                      </td>
+                      <td class="col-10">
+                        Further specifies a Textual or Topical Parallel by
+                        assigning it a type. The type usually states how close
+                        the subject and the object are to each other from
+                        'Verbatim', i.e. word-for-word identical, to a
+                        'LooseRendering', which makes them very different.
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+
+              <h2 id="ConnectiveOntology-ParallelinOtherLanguage">
+                Parallel in Other Language
+              </h2>
+              <div class="table-responsive">
+                <table class="table">
+                  <tbody>
+                    <tr class="d-flex">
+                      <td
+                        class="col-2 fw-bold text-truncate"
+                        title="Subclass of"
+                      >
+                        Subclass of
+                      </td>
+                      <td class="col-10">
+                        <a href="#ConnectiveOntology-TextualParallel"
+                          >Textual Parallel</a
+                        >
+                      </td>
+                    </tr>
+                    <tr class="d-flex">
+                      <td
+                        class="col-2 fw-bold text-truncate"
+                        title="Description"
+                      >
+                        Description
+                      </td>
+                      <td class="col-10">
+                        Subcategory of a Textual Parallel which signifies that
+                        the object (the text where the connection is drawn
+                        towards) is in another language than the subject (the
+                        text the connection is drawn from).
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+
+              <h2 id="ConnectiveOntology-ParallelinSameLanguage">
+                Parallel in Same Language
+              </h2>
+              <div class="table-responsive">
+                <table class="table">
+                  <tbody>
+                    <tr class="d-flex">
+                      <td
+                        class="col-2 fw-bold text-truncate"
+                        title="Subclass of"
+                      >
+                        Subclass of
+                      </td>
+                      <td class="col-10">
+                        <a href="#ConnectiveOntology-TextualParallel"
+                          >Textual Parallel</a
+                        >
+                      </td>
+                    </tr>
+                    <tr class="d-flex">
+                      <td
+                        class="col-2 fw-bold text-truncate"
+                        title="Description"
+                      >
+                        Description
+                      </td>
+                      <td class="col-10">
+                        Subcategory of a Textual Parallel which signifies that
+                        the object (the text where the connection is drawn
+                        towards) is in the same language as the subject (the
+                        text the connection is drawn from).
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+
+              <h2 id="ConnectiveOntology-RenderingOfText">Rendering of Text</h2>
+              <div class="table-responsive">
+                <table class="table">
+                  <tbody>
+                    <tr class="d-flex">
+                      <td
+                        class="col-2 fw-bold text-truncate"
+                        title="Subclass of"
+                      >
+                        Subclass of
+                      </td>
+                      <td class="col-10">
+                        <a href="#ConnectiveOntology-ParallelinSameLanguage"
+                          >Parallel in Same Language</a
+                        >
+                      </td>
+                    </tr>
+                    <tr class="d-flex">
+                      <td
+                        class="col-2 fw-bold text-truncate"
+                        title="Description"
+                      >
+                        Description
+                      </td>
+                      <td class="col-10">
+                        Subclass of a Textual parallel in the same language,
+                        which indicates that something is expressed "in a
+                        related but different way".
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+
+              <h2 id="ConnectiveOntology-Statement">Statement</h2>
+              <div class="table-responsive">
+                <table class="table">
+                  <tbody>
+                    <tr class="d-flex">
+                      <td
+                        class="col-2 fw-bold text-truncate"
+                        title="Subclass of"
+                      >
+                        Subclass of
+                      </td>
+                      <td class="col-10">
+                        <a href="#lrmoo-F1_Work">F1 Work</a>
+                      </td>
+                    </tr>
+                    <tr class="d-flex">
+                      <td
+                        class="col-2 fw-bold text-truncate"
+                        title="Description"
+                      >
+                        Description
+                      </td>
+                      <td class="col-10">
+                        General, abstracted type of discursive statements, e.g.,
+                        "Muhammad was not a true prophet" or "Jesus was not
+                        truly crucified", which can be realized in different
+                        concrete formulations.
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+
+              <h2 id="ConnectiveOntology-StatementExpression">
+                Statement Expression
+              </h2>
+              <div class="table-responsive">
+                <table class="table">
+                  <tbody>
+                    <tr class="d-flex">
+                      <td
+                        class="col-2 fw-bold text-truncate"
+                        title="Subclass of"
+                      >
+                        Subclass of
+                      </td>
+                      <td class="col-10">
+                        <a href="#lrmoo-F2_Expression">F2 Expression</a>
+                      </td>
+                    </tr>
+                    <tr class="d-flex">
+                      <td
+                        class="col-2 fw-bold text-truncate"
+                        title="Description"
+                      >
+                        Description
+                      </td>
+                      <td class="col-10">
+                        A concrete expression of an argument Archetype. Realized
+                        in statement formulations.
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+
+              <h2 id="ConnectiveOntology-TextualParallel">Textual Parallel</h2>
+              <div class="table-responsive">
+                <table class="table">
+                  <tbody>
+                    <tr class="d-flex">
+                      <td
+                        class="col-2 fw-bold text-truncate"
+                        title="Subclass of"
+                      >
+                        Subclass of
+                      </td>
+                      <td class="col-10">
+                        <a href="#hdn-LociParalleli">Loci Paralleli</a>
+                      </td>
+                    </tr>
+                    <tr class="d-flex">
+                      <td
+                        class="col-2 fw-bold text-truncate"
+                        title="Description"
+                      >
+                        Description
+                      </td>
+                      <td class="col-10">
+                        Subclass of a Connective Claim that indicates some
+                        textual similarity between the subject and the object,
+                        which can be specified by further subclasses and type
+                        assignments.
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+
+              <h2 id="ConnectiveOntology-TopicalParallel">Topical Parallel</h2>
+              <div class="table-responsive">
+                <table class="table">
+                  <tbody>
+                    <tr class="d-flex">
+                      <td
+                        class="col-2 fw-bold text-truncate"
+                        title="Subclass of"
+                      >
+                        Subclass of
+                      </td>
+                      <td class="col-10">
+                        <a href="#hdn-LociParalleli">Loci Paralleli</a>
+                      </td>
+                    </tr>
+                    <tr class="d-flex">
+                      <td
+                        class="col-2 fw-bold text-truncate"
+                        title="Description"
+                      >
+                        Description
+                      </td>
+                      <td class="col-10">
+                        Type of Connective Claim that signals a Topical Parallel
+                        between the subject and the object that thereby claims
+                        no textual overlap. Most Textual Parallels will also be
+                        Topical Parallels, but not vice versa.
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+
+              <h2 id="ConnectiveOntology-VariantOfText">Variant of Text</h2>
+              <div class="table-responsive">
+                <table class="table">
+                  <tbody>
+                    <tr class="d-flex">
+                      <td
+                        class="col-2 fw-bold text-truncate"
+                        title="Subclass of"
+                      >
+                        Subclass of
+                      </td>
+                      <td class="col-10">
+                        <a href="#ConnectiveOntology-VersionOfText"
+                          >Version of Text</a
+                        >
+                      </td>
+                    </tr>
+                    <tr class="d-flex">
+                      <td
+                        class="col-2 fw-bold text-truncate"
+                        title="Description"
+                      >
+                        Description
+                      </td>
+                      <td class="col-10">
+                        Subclass of Textual Version that indicates how closely
+                        related two passages of text are. Aligned with the SAWS
+                        predicate "isVariantOf".
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+
+              <h2 id="ConnectiveOntology-VerbatimOfText">Verbatim of Text</h2>
+              <div class="table-responsive">
+                <table class="table">
+                  <tbody>
+                    <tr class="d-flex">
+                      <td
+                        class="col-2 fw-bold text-truncate"
+                        title="Subclass of"
+                      >
+                        Subclass of
+                      </td>
+                      <td class="col-10">
+                        <a href="#ConnectiveOntology-ParallelType"
+                          >Parallel Type</a
+                        >
+                      </td>
+                    </tr>
+                    <tr class="d-flex">
+                      <td
+                        class="col-2 fw-bold text-truncate"
+                        title="Description"
+                      >
+                        Description
+                      </td>
+                      <td class="col-10">
+                        Type of Textual Parallel that indicates a very close
+                        connection between subject and object. Aligned with the
+                        SAWS predicates "isVerbatimOfText".
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+
+              <h2 id="ConnectiveOntology-VersionOfText">Version of Text</h2>
+              <div class="table-responsive">
+                <table class="table">
+                  <tbody>
+                    <tr class="d-flex">
+                      <td
+                        class="col-2 fw-bold text-truncate"
+                        title="Subclass of"
+                      >
+                        Subclass of
+                      </td>
+                      <td class="col-10">
+                        <a href="#ConnectiveOntology-TextualParallel"
+                          >Textual Parallel</a
+                        >
+                      </td>
+                    </tr>
+                    <tr class="d-flex">
+                      <td
+                        class="col-2 fw-bold text-truncate"
+                        title="Description"
+                      >
+                        Description
+                      </td>
+                      <td class="col-10">
+                        Subclass of a Textual Parallel that is aligned with the
+                        SAWS predicate "isVersionOf".
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+
+              <h2 id="ConnectiveOntology-explicitSignalling">
+                Explicit Signalling
+              </h2>
+              <div class="table-responsive">
+                <table class="table">
+                  <tbody>
+                    <tr class="d-flex">
+                      <td
+                        class="col-2 fw-bold text-truncate"
+                        title="Subclass of"
+                      >
+                        Subclass of
+                      </td>
+                      <td class="col-10">
+                        <a href="#ConnectiveOntology-Citation_Signalling"
+                          >Citation Signalling</a
+                        >
+                      </td>
+                    </tr>
+                    <tr class="d-flex">
+                      <td
+                        class="col-2 fw-bold text-truncate"
+                        title="Description"
+                      >
+                        Description
+                      </td>
+                      <td class="col-10">
+                        Subclass of Citation Signalling, which indicates that
+                        the author of a text makes it explicit that some
+                        citation or re-use is happening. Can be further
+                        specified by types.
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+
+              <h1 id="object-properties">Object Properties</h1>
+              <h2 id="hasBeginning">hasBeginning</h2>
+              <div class="table-responsive">
+                <table class="table">
+                  <tbody>
+                    <tr class="d-flex">
+                      <td
+                        class="col-2 fw-bold text-truncate"
+                        title="Description"
+                      >
+                        Description
+                      </td>
+                      <td class="col-10">Beginning of a temporal entity.</td>
+                    </tr>
+                    <tr class="d-flex">
+                      <td class="col-2 fw-bold text-truncate" title="Range">
+                        Range
+                      </td>
+                      <td class="col-10"><a href="#hasTime">hasTime</a></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+
+              <h2 id="hasEnd">hasEnd</h2>
+              <div class="table-responsive">
+                <table class="table">
+                  <tbody>
+                    <tr class="d-flex">
+                      <td
+                        class="col-2 fw-bold text-truncate"
+                        title="Description"
+                      >
+                        Description
+                      </td>
+                      <td class="col-10">End of a temporal entity.</td>
+                    </tr>
+                    <tr class="d-flex">
+                      <td class="col-2 fw-bold text-truncate" title="Range">
+                        Range
+                      </td>
+                      <td class="col-10"><a href="#hasTime">hasTime</a></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+
+              <h2 id="hasTime">hasTime</h2>
+              <div class="table-responsive">
+                <table class="table">
+                  <tbody>
+                    <tr class="d-flex">
+                      <td
+                        class="col-2 fw-bold text-truncate"
+                        title="Description"
+                      >
+                        Description
+                      </td>
+                      <td class="col-10">
+                        Supports the association of a temporal entity (instant
+                        or interval) to any thing.
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+
+              <h2 id="fromPosition">fromPosition</h2>
+              <div class="table-responsive">
+                <table class="table">
+                  <tbody>
+                    <tr class="d-flex">
+                      <td class="col-2 fw-bold text-truncate" title="Domain">
+                        Domain
+                      </td>
+                      <td class="col-10">
+                        <a href="#hdn-TextFragment">Text Fragment</a>
+                      </td>
+                    </tr>
+                    <tr class="d-flex">
+                      <td class="col-2 fw-bold text-truncate" title="Range">
+                        Range
+                      </td>
+                      <td class="col-10">
+                        <a href="#hdn-Position">Position</a>
+                      </td>
+                    </tr>
+                    <tr class="d-flex">
+                      <td
+                        class="col-2 fw-bold text-truncate"
+                        title="Description"
+                      >
+                        Description
+                      </td>
+                      <td class="col-10">From Position as defined in HDN.</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+
+              <h2 id="hasRefObject">hasRefObject</h2>
+              <div class="table-responsive">
+                <table class="table">
+                  <tbody>
+                    <tr class="d-flex">
+                      <td
+                        class="col-2 fw-bold text-truncate"
+                        title="Subproperty of"
+                      >
+                        Subproperty of
+                      </td>
+                      <td class="col-10">
+                        <a href="#cidoc-crm-P129_is_about">P129 is about</a>
+                      </td>
+                    </tr>
+                    <tr class="d-flex">
+                      <td class="col-2 fw-bold text-truncate" title="Domain">
+                        Domain
+                      </td>
+                      <td class="col-10">
+                        <a href="#hdn-Reference">Reference</a>
+                      </td>
+                    </tr>
+                    <tr class="d-flex">
+                      <td class="col-2 fw-bold text-truncate" title="Range">
+                        Range
+                      </td>
+                      <td class="col-10">
+                        <a href="#cidoc-crm-E1_CRM_Entity">E1 CRM Entity</a>
+                      </td>
+                    </tr>
+                    <tr class="d-flex">
+                      <td
+                        class="col-2 fw-bold text-truncate"
+                        title="Description"
+                      >
+                        Description
+                      </td>
+                      <td class="col-10">
+                        Object of a Connective Claim, i.e. the propositional
+                        content that helps to understand the subject.
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+
+              <h2 id="hasRefSubjObj">hasRefSubjObj</h2>
+              <div class="table-responsive">
+                <table class="table">
+                  <tbody>
+                    <tr class="d-flex">
+                      <td
+                        class="col-2 fw-bold text-truncate"
+                        title="Subproperty of"
+                      >
+                        Subproperty of
+                      </td>
+                      <td class="col-10">
+                        <a href="#cidoc-crm-P2_has_type">P2 has type</a>
+                      </td>
+                    </tr>
+                    <tr class="d-flex">
+                      <td class="col-2 fw-bold text-truncate" title="Domain">
+                        Domain
+                      </td>
+                      <td class="col-10">
+                        <a href="#hdn-Reference">Reference</a>
+                      </td>
+                    </tr>
+                    <tr class="d-flex">
+                      <td class="col-2 fw-bold text-truncate" title="Range">
+                        Range
+                      </td>
+                      <td class="col-10">
+                        <a href="#hdn-Subject-ObjectRelationship"
+                          >Subject-Object Relationship</a
+                        >
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+
+              <h2 id="hasRefSubject">hasRefSubject</h2>
+              <div class="table-responsive">
+                <table class="table">
+                  <tbody>
+                    <tr class="d-flex">
+                      <td
+                        class="col-2 fw-bold text-truncate"
+                        title="Subproperty of"
+                      >
+                        Subproperty of
+                      </td>
+                      <td class="col-10">
+                        <a href="#cidoc-crm-P46_is_composed_of"
+                          >P46 is composed of</a
+                        >
+                      </td>
+                    </tr>
+                    <tr class="d-flex">
+                      <td class="col-2 fw-bold text-truncate" title="Domain">
+                        Domain
+                      </td>
+                      <td class="col-10">
+                        <a href="#hdn-Reference">Reference</a>
+                      </td>
+                    </tr>
+                    <tr class="d-flex">
+                      <td class="col-2 fw-bold text-truncate" title="Range">
+                        Range
+                      </td>
+                      <td class="col-10">
+                        <a href="#cidoc-crm-E90_Symbolic_Object"
+                          >E90 Symbolic Object</a
+                        >
+                      </td>
+                    </tr>
+                    <tr class="d-flex">
+                      <td
+                        class="col-2 fw-bold text-truncate"
+                        title="Description"
+                      >
+                        Description
+                      </td>
+                      <td class="col-10">
+                        The subject of a Connective Claim is a propositional
+                        object, usually a textual passage, that can be better
+                        understood by consulting the object, which can be
+                        another text passage, a motif, a person, and more.
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+
+              <h2 id="hasSource">hasSource</h2>
+              <div class="table-responsive">
+                <table class="table">
+                  <tbody>
+                    <tr class="d-flex">
+                      <td
+                        class="col-2 fw-bold text-truncate"
+                        title="Subproperty of"
+                      >
+                        Subproperty of
+                      </td>
+                      <td class="col-10">
+                        <a href="#cidoc-crm-P129i_is_subject_of"
+                          >P129i is subject of</a
+                        >
+                      </td>
+                    </tr>
+                    <tr class="d-flex">
+                      <td class="col-2 fw-bold text-truncate" title="Domain">
+                        Domain
+                      </td>
+                      <td class="col-10">
+                        <a href="#hdn-Reference">Reference</a>
+                      </td>
+                    </tr>
+                    <tr class="d-flex">
+                      <td class="col-2 fw-bold text-truncate" title="Range">
+                        Range
+                      </td>
+                      <td class="col-10">
+                        <a href="#hdn-Sentence">Sentence</a>
+                      </td>
+                    </tr>
+                    <tr class="d-flex">
+                      <td
+                        class="col-2 fw-bold text-truncate"
+                        title="Description"
+                      >
+                        Description
+                      </td>
+                      <td class="col-10">
+                        Source that is establishing the Connective Claim, which
+                        links a subject to an explanative object.
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+
+              <h2 id="positionUnit">positionUnit</h2>
+              <div class="table-responsive">
+                <table class="table">
+                  <tbody>
+                    <tr class="d-flex">
+                      <td
+                        class="col-2 fw-bold text-truncate"
+                        title="Subproperty of"
+                      >
+                        Subproperty of
+                      </td>
+                      <td class="col-10">
+                        <a href="#lrmoo-R70_has_dimension">R70 has dimension</a>
+                      </td>
+                    </tr>
+                    <tr class="d-flex">
+                      <td class="col-2 fw-bold text-truncate" title="Domain">
+                        Domain
+                      </td>
+                      <td class="col-10">
+                        <a href="#hdn-Position">Position</a>
+                      </td>
+                    </tr>
+                    <tr class="d-flex">
+                      <td class="col-2 fw-bold text-truncate" title="Range">
+                        Range
+                      </td>
+                      <td class="col-10">
+                        <a href="#lrmoo-F2_Expression">F2 Expression</a>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+
+              <h2 id="toPosition">toPosition</h2>
+              <div class="table-responsive">
+                <table class="table">
+                  <tbody>
+                    <tr class="d-flex">
+                      <td class="col-2 fw-bold text-truncate" title="Domain">
+                        Domain
+                      </td>
+                      <td class="col-10">
+                        <a href="#hdn-TextFragment">Text Fragment</a>
+                      </td>
+                    </tr>
+                    <tr class="d-flex">
+                      <td class="col-2 fw-bold text-truncate" title="Range">
+                        Range
+                      </td>
+                      <td class="col-10">
+                        <a href="#hdn-Position">Position</a>
+                      </td>
+                    </tr>
+                    <tr class="d-flex">
+                      <td
+                        class="col-2 fw-bold text-truncate"
+                        title="Description"
+                      >
+                        Description
+                      </td>
+                      <td class="col-10">
+                        Signals the ending position of a text unit.
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+
+              <h2 id="asserted_as_a_connection">asserted as a connection</h2>
+              <div class="table-responsive">
+                <table class="table">
+                  <tbody>
+                    <tr class="d-flex">
+                      <td
+                        class="col-2 fw-bold text-truncate"
+                        title="Inverse of"
+                      >
+                        Inverse of
+                      </td>
+                      <td class="col-10">
+                        <a href="#was_asserted_as_a_connection_by"
+                          >was asserted as a connection by</a
+                        >
+                      </td>
+                    </tr>
+                    <tr class="d-flex">
+                      <td class="col-2 fw-bold text-truncate" title="Domain">
+                        Domain
+                      </td>
+                      <td class="col-10">
+                        <a href="#cidoc-crm-E1_CRM_Entity">E1 CRM Entity</a>
+                      </td>
+                    </tr>
+                    <tr class="d-flex">
+                      <td class="col-2 fw-bold text-truncate" title="Range">
+                        Range
+                      </td>
+                      <td class="col-10">
+                        <a href="#ConnectiveOntology-ConnectiveClaim"
+                          >Connective Claim</a
+                        >
+                      </td>
+                    </tr>
+                    <tr class="d-flex">
+                      <td
+                        class="col-2 fw-bold text-truncate"
+                        title="Description"
+                      >
+                        Description
+                      </td>
+                      <td class="col-10">
+                        Records who asserted a certain Connective Claim.
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+
+              <h2 id="hasParallelType">hasParallelType</h2>
+              <div class="table-responsive">
+                <table class="table">
+                  <tbody>
+                    <tr class="d-flex">
+                      <td
+                        class="col-2 fw-bold text-truncate"
+                        title="Subproperty of"
+                      >
+                        Subproperty of
+                      </td>
+                      <td class="col-10">
+                        <a href="#cidoc-crm-P2_has_type">P2 has type</a>
+                      </td>
+                    </tr>
+                    <tr class="d-flex">
+                      <td
+                        class="col-2 fw-bold text-truncate"
+                        title="Inverse of"
+                      >
+                        Inverse of
+                      </td>
+                      <td class="col-10">
+                        <a href="#isParallelTypeOf">is parallel type of</a>
+                      </td>
+                    </tr>
+                    <tr class="d-flex">
+                      <td class="col-2 fw-bold text-truncate" title="Domain">
+                        Domain
+                      </td>
+                      <td class="col-10">
+                        <a href="#ConnectiveOntology-ConnectiveClaim"
+                          >Connective Claim</a
+                        >
+                      </td>
+                    </tr>
+                    <tr class="d-flex">
+                      <td class="col-2 fw-bold text-truncate" title="Range">
+                        Range
+                      </td>
+                      <td class="col-10">
+                        <a href="#ConnectiveOntology-ParallelType"
+                          >Parallel Type</a
+                        >
+                      </td>
+                    </tr>
+                    <tr class="d-flex">
+                      <td
+                        class="col-2 fw-bold text-truncate"
+                        title="Description"
+                      >
+                        Description
+                      </td>
+                      <td class="col-10">
+                        Further specifies a Textual or Topica Parallel by giving
+                        it a type, such as "Verbatim", or "LooseRendering".
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+
+              <h2 id="hasSignallingObject">has Signalling Object</h2>
+              <div class="table-responsive">
+                <table class="table">
+                  <tbody>
+                    <tr class="d-flex">
+                      <td
+                        class="col-2 fw-bold text-truncate"
+                        title="Inverse of"
+                      >
+                        Inverse of
+                      </td>
+                      <td class="col-10">
+                        <a href="#isSignallingObjectOf"
+                          >is signalling object of</a
+                        >
+                      </td>
+                    </tr>
+                    <tr class="d-flex">
+                      <td class="col-2 fw-bold text-truncate" title="Domain">
+                        Domain
+                      </td>
+                      <td class="col-10">
+                        <a href="#ConnectiveOntology-ConnectiveClaim"
+                          >Connective Claim</a
+                        >
+                      </td>
+                    </tr>
+                    <tr class="d-flex">
+                      <td class="col-2 fw-bold text-truncate" title="Range">
+                        Range
+                      </td>
+                      <td class="col-10">owl:Thing</td>
+                    </tr>
+                    <tr class="d-flex">
+                      <td
+                        class="col-2 fw-bold text-truncate"
+                        title="Description"
+                      >
+                        Description
+                      </td>
+                      <td class="col-10">
+                        Specifies what object the signalling of a Connective
+                        Claim refers to, e.g., "Jesus", "The Bible", "some
+                        person", or "some book".
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+
+              <h2 id="hasSignallingType">Has Signalling Type</h2>
+              <div class="table-responsive">
+                <table class="table">
+                  <tbody>
+                    <tr class="d-flex">
+                      <td
+                        class="col-2 fw-bold text-truncate"
+                        title="Subproperty of"
+                      >
+                        Subproperty of
+                      </td>
+                      <td class="col-10">
+                        <a href="#cidoc-crm-P2_has_type">P2 has type</a>
+                      </td>
+                    </tr>
+                    <tr class="d-flex">
+                      <td
+                        class="col-2 fw-bold text-truncate"
+                        title="Inverse of"
+                      >
+                        Inverse of
+                      </td>
+                      <td class="col-10">
+                        <a href="#isSignallingTypeOf">is signalling type of</a>
+                      </td>
+                    </tr>
+                    <tr class="d-flex">
+                      <td class="col-2 fw-bold text-truncate" title="Domain">
+                        Domain
+                      </td>
+                      <td class="col-10">
+                        <a href="#ConnectiveOntology-ConnectiveClaim"
+                          >Connective Claim</a
+                        >
+                      </td>
+                    </tr>
+                    <tr class="d-flex">
+                      <td class="col-2 fw-bold text-truncate" title="Range">
+                        Range
+                      </td>
+                      <td class="col-10">
+                        <a href="#ConnectiveOntology-Citation_Signalling"
+                          >Citation Signalling</a
+                        >
+                      </td>
+                    </tr>
+                    <tr class="d-flex">
+                      <td
+                        class="col-2 fw-bold text-truncate"
+                        title="Description"
+                      >
+                        Description
+                      </td>
+                      <td class="col-10">
+                        Links a Connective Claim to a specific kind of
+                        signalling. Signalling indicates whether and how the
+                        subject makes clear that it re-uses or cites another
+                        text.
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+
+              <h2 id="isParallelTypeOf">is Parallel Type Of</h2>
+              <div class="table-responsive">
+                <table class="table">
+                  <tbody>
+                    <tr class="d-flex">
+                      <td
+                        class="col-2 fw-bold text-truncate"
+                        title="Subproperty of"
+                      >
+                        Subproperty of
+                      </td>
+                      <td class="col-10">
+                        <a href="#cidoc-crm-P2i_is_type_of">P2i is type of</a>
+                      </td>
+                    </tr>
+                    <tr class="d-flex">
+                      <td class="col-2 fw-bold text-truncate" title="Domain">
+                        Domain
+                      </td>
+                      <td class="col-10">
+                        <a href="#ConnectiveOntology-ParallelType"
+                          >Parallel Type</a
+                        >
+                      </td>
+                    </tr>
+                    <tr class="d-flex">
+                      <td class="col-2 fw-bold text-truncate" title="Range">
+                        Range
+                      </td>
+                      <td class="col-10">
+                        <a href="#ConnectiveOntology-ConnectiveClaim"
+                          >Connective Claim</a
+                        >
+                      </td>
+                    </tr>
+                    <tr class="d-flex">
+                      <td
+                        class="col-2 fw-bold text-truncate"
+                        title="Description"
+                      >
+                        Description
+                      </td>
+                      <td class="col-10">
+                        Signifies that a certain Parallel Type is the type of a
+                        specific Connective Claim.
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+
+              <h2 id="isSignallingObjectOf">is Signalling Object Of</h2>
+              <div class="table-responsive">
+                <table class="table">
+                  <tbody>
+                    <tr class="d-flex">
+                      <td class="col-2 fw-bold text-truncate" title="Domain">
+                        Domain
+                      </td>
+                      <td class="col-10">owl:Thing</td>
+                    </tr>
+                    <tr class="d-flex">
+                      <td class="col-2 fw-bold text-truncate" title="Range">
+                        Range
+                      </td>
+                      <td class="col-10">
+                        <a href="#ConnectiveOntology-ConnectiveClaim"
+                          >Connective Claim</a
+                        >
+                      </td>
+                    </tr>
+                    <tr class="d-flex">
+                      <td
+                        class="col-2 fw-bold text-truncate"
+                        title="Description"
+                      >
+                        Description
+                      </td>
+                      <td class="col-10">
+                        Affirms to which Connective Claim a signalling object
+                        belongs.
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+
+              <h2 id="isSignallingTypeOf">is Signalling Type Of</h2>
+              <div class="table-responsive">
+                <table class="table">
+                  <tbody>
+                    <tr class="d-flex">
+                      <td
+                        class="col-2 fw-bold text-truncate"
+                        title="Subproperty of"
+                      >
+                        Subproperty of
+                      </td>
+                      <td class="col-10">
+                        <a href="#cidoc-crm-P2i_is_type_of">P2i is type of</a>
+                      </td>
+                    </tr>
+                    <tr class="d-flex">
+                      <td class="col-2 fw-bold text-truncate" title="Domain">
+                        Domain
+                      </td>
+                      <td class="col-10">
+                        <a href="#ConnectiveOntology-Citation_Signalling"
+                          >Citation Signalling</a
+                        >
+                      </td>
+                    </tr>
+                    <tr class="d-flex">
+                      <td class="col-2 fw-bold text-truncate" title="Range">
+                        Range
+                      </td>
+                      <td class="col-10">
+                        <a href="#ConnectiveOntology-ConnectiveClaim"
+                          >Connective Claim</a
+                        >
+                      </td>
+                    </tr>
+                    <tr class="d-flex">
+                      <td
+                        class="col-2 fw-bold text-truncate"
+                        title="Description"
+                      >
+                        Description
+                      </td>
+                      <td class="col-10">
+                        Specifies which Connective Claim a Signalling Type
+                        typifies.
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+
+              <h2 id="was_asserted_as_a_connection_by">
+                was asserted as a connection by
+              </h2>
+              <div class="table-responsive">
+                <table class="table">
+                  <tbody>
+                    <tr class="d-flex">
+                      <td class="col-2 fw-bold text-truncate" title="Domain">
+                        Domain
+                      </td>
+                      <td class="col-10">
+                        <a href="#ConnectiveOntology-ConnectiveClaim"
+                          >Connective Claim</a
+                        >
+                      </td>
+                    </tr>
+                    <tr class="d-flex">
+                      <td class="col-2 fw-bold text-truncate" title="Range">
+                        Range
+                      </td>
+                      <td class="col-10">
+                        <a href="#cidoc-crm-E1_CRM_Entity">E1 CRM Entity</a>
+                      </td>
+                    </tr>
+                    <tr class="d-flex">
+                      <td
+                        class="col-2 fw-bold text-truncate"
+                        title="Description"
+                      >
+                        Description
+                      </td>
+                      <td class="col-10">
+                        Basic predicate to link a Connective Claim to its act of
+                        creation, often the publication of a researcher.
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+
+              <h1 id="data-properties">Data Properties</h1>
+              <h2 id="has_claim_text">has claim text</h2>
+              <div class="table-responsive">
+                <table class="table">
+                  <tbody>
+                    <tr class="d-flex">
+                      <td
+                        class="col-2 fw-bold text-truncate"
+                        title="Description"
+                      >
+                        Description
+                      </td>
+                      <td class="col-10">
+                        Gives the text that establishes a connective claim.
+                      </td>
+                    </tr>
+                    <tr class="d-flex">
+                      <td class="col-2 fw-bold text-truncate" title="Domain">
+                        Domain
+                      </td>
+                      <td class="col-10">
+                        <a href="#ConnectiveOntology-ConnectiveClaim"
+                          >Connective Claim</a
+                        >
+                      </td>
+                    </tr>
+                    <tr class="d-flex">
+                      <td class="col-2 fw-bold text-truncate" title="Range">
+                        Range
+                      </td>
+                      <td class="col-10">String</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+
+              <h2 id="has_explicit">has explicit</h2>
+              <div class="table-responsive">
+                <table class="table">
+                  <tbody>
+                    <tr class="d-flex">
+                      <td
+                        class="col-2 fw-bold text-truncate"
+                        title="Description"
+                      >
+                        Description
+                      </td>
+                      <td class="col-10">
+                        Marks the last few words of a textual unit.
+                      </td>
+                    </tr>
+                    <tr class="d-flex">
+                      <td class="col-2 fw-bold text-truncate" title="Domain">
+                        Domain
+                      </td>
+                      <td class="col-10">
+                        <a href="#cidoc-crm-E28_Conceptual_Object"
+                          >Conceptual Object</a
+                        >
+                      </td>
+                    </tr>
+                    <tr class="d-flex">
+                      <td class="col-2 fw-bold text-truncate" title="Range">
+                        Range
+                      </td>
+                      <td class="col-10">String</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+
+              <h2 id="has_incipit">has incipit</h2>
+              <div class="table-responsive">
+                <table class="table">
+                  <tbody>
+                    <tr class="d-flex">
+                      <td
+                        class="col-2 fw-bold text-truncate"
+                        title="Description"
+                      >
+                        Description
+                      </td>
+                      <td class="col-10">
+                        Marks the first few words of a text fragment.
+                      </td>
+                    </tr>
+                    <tr class="d-flex">
+                      <td class="col-2 fw-bold text-truncate" title="Domain">
+                        Domain
+                      </td>
+                      <td class="col-10">
+                        <a href="#cidoc-crm-E28_Conceptual_Object"
+                          >Conceptual Object</a
+                        >
+                      </td>
+                    </tr>
+                    <tr class="d-flex">
+                      <td class="col-2 fw-bold text-truncate" title="Range">
+                        Range
+                      </td>
+                      <td class="col-10">String</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+
+              <h2 id="has_ref_text">has ref text</h2>
+              <div class="table-responsive">
+                <table class="table">
+                  <tbody>
+                    <tr class="d-flex">
+                      <td
+                        class="col-2 fw-bold text-truncate"
+                        title="Description"
+                      >
+                        Description
+                      </td>
+                      <td class="col-10">
+                        Gives the text that is assigned to the reference within
+                        the text itself.
+                      </td>
+                    </tr>
+                    <tr class="d-flex">
+                      <td class="col-2 fw-bold text-truncate" title="Domain">
+                        Domain
+                      </td>
+                      <td class="col-10">
+                        <a href="#ConnectiveOntology-ConnectiveClaim"
+                          >Connective Claim</a
+                        >
+                      </td>
+                    </tr>
+                    <tr class="d-flex">
+                      <td class="col-2 fw-bold text-truncate" title="Range">
+                        Range
+                      </td>
+                      <td class="col-10">String</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+
+              <h2 id="has_signalling_text">has signalling text</h2>
+              <div class="table-responsive">
+                <table class="table">
+                  <tbody>
+                    <tr class="d-flex">
+                      <td
+                        class="col-2 fw-bold text-truncate"
+                        title="Description"
+                      >
+                        Description
+                      </td>
+                      <td class="col-10">
+                        Gives the part of the main text that signals the
+                        reference.
+                      </td>
+                    </tr>
+                    <tr class="d-flex">
+                      <td class="col-2 fw-bold text-truncate" title="Domain">
+                        Domain
+                      </td>
+                      <td class="col-10">
+                        <a href="#ConnectiveOntology-ConnectiveClaim"
+                          >Connective Claim</a
+                        >
+                      </td>
+                    </tr>
+                    <tr class="d-flex">
+                      <td class="col-2 fw-bold text-truncate" title="Range">
+                        Range
+                      </td>
+                      <td class="col-10">String</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+
+              <h2 id="positionOffset">positionOffset</h2>
+              <div class="table-responsive">
+                <table class="table">
+                  <tbody>
+                    <tr class="d-flex">
+                      <td
+                        class="col-2 fw-bold text-truncate"
+                        title="Description"
+                      >
+                        Description
+                      </td>
+                      <td class="col-10">Position Offset as defined in HDN.</td>
+                    </tr>
+                    <tr class="d-flex">
+                      <td class="col-2 fw-bold text-truncate" title="Domain">
+                        Domain
+                      </td>
+                      <td class="col-10">
+                        <a href="#hdn-Position">Position</a>
+                      </td>
+                    </tr>
+                    <tr class="d-flex">
+                      <td class="col-2 fw-bold text-truncate" title="Range">
+                        Range
+                      </td>
+                      <td class="col-10">Integer</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-3 position-relative">
+            <div
+              class="sticky-top overflow-auto ms-xl-5 ms-lg-4 ps-xxl-4"
+              style="top: 105px !important; max-height: calc(80vh - 105px)"
+            >
+              <div class="mb-4 pb-lg-3">
+                <a
+                  href="#metadata"
+                  data-scroll=""
+                  data-scroll-offset="70"
+                  class="fw-bold mb-2 d-block"
+                  >Metadata</a
+                >
+                <a
+                  href="#classes"
+                  data-scroll=""
+                  data-scroll-offset="70"
+                  class="fw-bold mb-2 d-block"
+                  >Classes</a
+                >
+                <a
+                  href="#cidoc-crm-E18_Physical_Thing"
+                  data-scroll=""
+                  data-scroll-offset="70"
+                  class="mb-2 d-block"
+                  >E18 Physical Thing</a
+                >
+                <a
+                  href="#cidoc-crm-E19_Physical_Object"
+                  data-scroll=""
+                  data-scroll-offset="70"
+                  class="mb-2 d-block"
+                  >E19 Physical Object</a
+                >
+                <a
+                  href="#cidoc-crm-E1_CRM_Entity"
+                  data-scroll=""
+                  data-scroll-offset="70"
+                  class="mb-2 d-block"
+                  >E1 CRM Entity</a
+                >
+                <a
+                  href="#cidoc-crm-E20_Biological_Object"
+                  data-scroll=""
+                  data-scroll-offset="70"
+                  class="mb-2 d-block"
+                  >E20 Biological Object</a
+                >
+                <a
+                  href="#cidoc-crm-E33_Linguistic_Object"
+                  data-scroll=""
+                  data-scroll-offset="70"
+                  class="mb-2 d-block"
+                  >E33 Linguistic Object</a
+                >
+                <a
+                  href="#cidoc-crm-E36_Visual_Item"
+                  data-scroll=""
+                  data-scroll-offset="70"
+                  class="mb-2 d-block"
+                  >E36 Visual Item</a
+                >
+                <a
+                  href="#cidoc-crm-E39_Actor"
+                  data-scroll=""
+                  data-scroll-offset="70"
+                  class="mb-2 d-block"
+                  >E39 Actor</a
+                >
+                <a
+                  href="#cidoc-crm-E4_Period"
+                  data-scroll=""
+                  data-scroll-offset="70"
+                  class="mb-2 d-block"
+                  >E4 Period</a
+                >
+                <a
+                  href="#cidoc-crm-E52_Time-Span"
+                  data-scroll=""
+                  data-scroll-offset="70"
+                  class="mb-2 d-block"
+                  >E52 Time-Span</a
+                >
+                <a
+                  href="#cidoc-crm-E53_Place"
+                  data-scroll=""
+                  data-scroll-offset="70"
+                  class="mb-2 d-block"
+                  >E53 Place</a
+                >
+                <a
+                  href="#cidoc-crm-E54_Dimension"
+                  data-scroll=""
+                  data-scroll-offset="70"
+                  class="mb-2 d-block"
+                  >E54 Dimension</a
+                >
+                <a
+                  href="#cidoc-crm-E55_Type"
+                  data-scroll=""
+                  data-scroll-offset="70"
+                  class="mb-2 d-block"
+                  >E55 Type</a
+                >
+                <a
+                  href="#cidoc-crm-E5_Event"
+                  data-scroll=""
+                  data-scroll-offset="70"
+                  class="mb-2 d-block"
+                  >E5 Event</a
+                >
+                <a
+                  href="#cidoc-crm-E70_Thing"
+                  data-scroll=""
+                  data-scroll-offset="70"
+                  class="mb-2 d-block"
+                  >E70 Thing</a
+                >
+                <a
+                  href="#cidoc-crm-E71_Human-Made_Thing"
+                  data-scroll=""
+                  data-scroll-offset="70"
+                  class="mb-2 d-block"
+                  >E71 Human-Made Thing</a
+                >
+                <a
+                  href="#cidoc-crm-E73_Information_Object"
+                  data-scroll=""
+                  data-scroll-offset="70"
+                  class="mb-2 d-block"
+                  >E73 Information Object</a
+                >
+                <a
+                  href="#cidoc-crm-E89_Propositional_Object"
+                  data-scroll=""
+                  data-scroll-offset="70"
+                  class="mb-2 d-block"
+                  >E89 Propositional Object</a
+                >
+                <a
+                  href="#cidoc-crm-E90_Symbolic_Object"
+                  data-scroll=""
+                  data-scroll-offset="70"
+                  class="mb-2 d-block"
+                  >E90 Symbolic Object</a
+                >
+                <a
+                  href="#hdn-ExternalSupport"
+                  data-scroll=""
+                  data-scroll-offset="70"
+                  class="mb-2 d-block"
+                  >External Support</a
+                >
+                <a
+                  href="#hdn-LociParalleli"
+                  data-scroll=""
+                  data-scroll-offset="70"
+                  class="mb-2 d-block"
+                  >Loci Paralleli</a
+                >
+                <a
+                  href="#hdn-Position"
+                  data-scroll=""
+                  data-scroll-offset="70"
+                  class="mb-2 d-block"
+                  >Position</a
+                >
+                <a
+                  href="#hdn-Reference"
+                  data-scroll=""
+                  data-scroll-offset="70"
+                  class="mb-2 d-block"
+                  >Reference</a
+                >
+                <a
+                  href="#hdn-Sentence"
+                  data-scroll=""
+                  data-scroll-offset="70"
+                  class="mb-2 d-block"
+                  >Sentence</a
+                >
+                <a
+                  href="#hdn-Subject-ObjectRelationship"
+                  data-scroll=""
+                  data-scroll-offset="70"
+                  class="mb-2 d-block"
+                  >Subject-Object Relationship</a
+                >
+                <a
+                  href="#hdn-TextFragment"
+                  data-scroll=""
+                  data-scroll-offset="70"
+                  class="mb-2 d-block"
+                  >Text Fragment</a
+                >
+                <a
+                  href="#ConnectiveOntology-Citation_Signalling"
+                  data-scroll=""
+                  data-scroll-offset="70"
+                  class="mb-2 d-block"
+                  >Citation Signalling</a
+                >
+                <a
+                  href="#ConnectiveOntology-Claim"
+                  data-scroll=""
+                  data-scroll-offset="70"
+                  class="mb-2 d-block"
+                  >Claim</a
+                >
+                <a
+                  href="#ConnectiveOntology-Comment"
+                  data-scroll=""
+                  data-scroll-offset="70"
+                  class="mb-2 d-block"
+                  >Comment</a
+                >
+                <a
+                  href="#ConnectiveOntology-ConnectiveClaim"
+                  data-scroll=""
+                  data-scroll-offset="70"
+                  class="mb-2 d-block"
+                  >Connective Claim</a
+                >
+                <a
+                  href="#ConnectiveOntology-ParallelType"
+                  data-scroll=""
+                  data-scroll-offset="70"
+                  class="mb-2 d-block"
+                  >Parallel Type</a
+                >
+                <a
+                  href="#ConnectiveOntology-ParallelinOtherLanguage"
+                  data-scroll=""
+                  data-scroll-offset="70"
+                  class="mb-2 d-block"
+                  >Parallel in Other Language</a
+                >
+                <a
+                  href="#ConnectiveOntology-ParallelinSameLanguage"
+                  data-scroll=""
+                  data-scroll-offset="70"
+                  class="mb-2 d-block"
+                  >Parallel in Same Language</a
+                >
+                <a
+                  href="#ConnectiveOntology-RenderingOfText"
+                  data-scroll=""
+                  data-scroll-offset="70"
+                  class="mb-2 d-block"
+                  >Rendering of Text</a
+                >
+                <a
+                  href="#ConnectiveOntology-Statement"
+                  data-scroll=""
+                  data-scroll-offset="70"
+                  class="mb-2 d-block"
+                  >Statement</a
+                >
+                <a
+                  href="#ConnectiveOntology-StatementExpression"
+                  data-scroll=""
+                  data-scroll-offset="70"
+                  class="mb-2 d-block"
+                  >Statement Expression</a
+                >
+                <a
+                  href="#ConnectiveOntology-TextualParallel"
+                  data-scroll=""
+                  data-scroll-offset="70"
+                  class="mb-2 d-block"
+                  >Textual Parallel</a
+                >
+                <a
+                  href="#ConnectiveOntology-TopicalParallel"
+                  data-scroll=""
+                  data-scroll-offset="70"
+                  class="mb-2 d-block"
+                  >Topical Parallel</a
+                >
+                <a
+                  href="#ConnectiveOntology-VariantOfText"
+                  data-scroll=""
+                  data-scroll-offset="70"
+                  class="mb-2 d-block"
+                  >Variant of Text</a
+                >
+                <a
+                  href="#ConnectiveOntology-VerbatimOfText"
+                  data-scroll=""
+                  data-scroll-offset="70"
+                  class="mb-2 d-block"
+                  >Verbatim of Text</a
+                >
+                <a
+                  href="#ConnectiveOntology-VersionOfText"
+                  data-scroll=""
+                  data-scroll-offset="70"
+                  class="mb-2 d-block"
+                  >Version of Text</a
+                >
+                <a
+                  href="#ConnectiveOntology-explicitSignalling"
+                  data-scroll=""
+                  data-scroll-offset="70"
+                  class="mb-2 d-block"
+                  >Explicit Signalling</a
+                >
+                <a
+                  href="#object-properties"
+                  data-scroll=""
+                  data-scroll-offset="70"
+                  class="fw-bold mb-2 d-block"
+                  >Object Properties</a
+                >
+                <a
+                  href="#hasBeginning"
+                  data-scroll=""
+                  data-scroll-offset="70"
+                  class="mb-2 d-block"
+                  >hasBeginning</a
+                >
+                <a
+                  href="#hasEnd"
+                  data-scroll=""
+                  data-scroll-offset="70"
+                  class="mb-2 d-block"
+                  >hasEnd</a
+                >
+                <a
+                  href="#hasTime"
+                  data-scroll=""
+                  data-scroll-offset="70"
+                  class="mb-2 d-block"
+                  >hasTime</a
+                >
+                <a
+                  href="#fromPosition"
+                  data-scroll=""
+                  data-scroll-offset="70"
+                  class="mb-2 d-block"
+                  >fromPosition</a
+                >
+                <a
+                  href="#hasRefObject"
+                  data-scroll=""
+                  data-scroll-offset="70"
+                  class="mb-2 d-block"
+                  >hasRefObject</a
+                >
+                <a
+                  href="#hasRefSubjObj"
+                  data-scroll=""
+                  data-scroll-offset="70"
+                  class="mb-2 d-block"
+                  >hasRefSubjObj</a
+                >
+                <a
+                  href="#hasRefSubject"
+                  data-scroll=""
+                  data-scroll-offset="70"
+                  class="mb-2 d-block"
+                  >hasRefSubject</a
+                >
+                <a
+                  href="#hasSource"
+                  data-scroll=""
+                  data-scroll-offset="70"
+                  class="mb-2 d-block"
+                  >hasSource</a
+                >
+                <a
+                  href="#positionUnit"
+                  data-scroll=""
+                  data-scroll-offset="70"
+                  class="mb-2 d-block"
+                  >positionUnit</a
+                >
+                <a
+                  href="#toPosition"
+                  data-scroll=""
+                  data-scroll-offset="70"
+                  class="mb-2 d-block"
+                  >toPosition</a
+                >
+                <a
+                  href="#asserted_as_a_connection"
+                  data-scroll=""
+                  data-scroll-offset="70"
+                  class="mb-2 d-block"
+                  >asserted as a connection</a
+                >
+                <a
+                  href="#hasParallelType"
+                  data-scroll=""
+                  data-scroll-offset="70"
+                  class="mb-2 d-block"
+                  >hasParallelType</a
+                >
+                <a
+                  href="#hasSignallingObject"
+                  data-scroll=""
+                  data-scroll-offset="70"
+                  class="mb-2 d-block"
+                  >hasSignallingObject</a
+                >
+                <a
+                  href="#hasSignallingType"
+                  data-scroll=""
+                  data-scroll-offset="70"
+                  class="mb-2 d-block"
+                  >hasSignallingType</a
+                >
+                <a
+                  href="#isParallelTypeOf"
+                  data-scroll=""
+                  data-scroll-offset="70"
+                  class="mb-2 d-block"
+                  >isParallelTypeOf</a
+                >
+                <a
+                  href="#isSignallingObjectOf"
+                  data-scroll=""
+                  data-scroll-offset="70"
+                  class="mb-2 d-block"
+                  >isSignallingObjectOf</a
+                >
+                <a
+                  href="#isSignallingTypeOf"
+                  data-scroll=""
+                  data-scroll-offset="70"
+                  class="mb-2 d-block"
+                  >isSignallingTypeOf</a
+                >
+                <a
+                  href="#was_asserted_as_a_connection_by"
+                  data-scroll=""
+                  data-scroll-offset="70"
+                  class="mb-2 d-block"
+                  >was asserted as a connection by</a
+                >
+                <a
+                  href="#data-properties"
+                  data-scroll=""
+                  data-scroll-offset="70"
+                  class="fw-bold mb-2 d-block"
+                  >Data Properties</a
+                >
+                <a
+                  href="#has_claim_text"
+                  data-scroll=""
+                  data-scroll-offset="70"
+                  class="mb-2 d-block"
+                  >has claim text</a
+                >
+                <a
+                  href="#has_explicit"
+                  data-scroll=""
+                  data-scroll-offset="70"
+                  class="mb-2 d-block"
+                  >has explicit</a
+                >
+                <a
+                  href="#has_incipit"
+                  data-scroll=""
+                  data-scroll-offset="70"
+                  class="mb-2 d-block"
+                  >has incipit</a
+                >
+                <a
+                  href="#has_ref_text"
+                  data-scroll=""
+                  data-scroll-offset="70"
+                  class="mb-2 d-block"
+                  >has ref text</a
+                >
+                <a
+                  href="#has_signalling_text"
+                  data-scroll=""
+                  data-scroll-offset="70"
+                  class="mb-2 d-block"
+                  >has signalling text</a
+                >
+                <a
+                  href="#positionOffset"
+                  data-scroll=""
+                  data-scroll-offset="70"
+                  class="mb-2 d-block"
+                  >positionOffset</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer bg-secondary pt-5 pb-4 pb-lg-5">
+      <div class="container pt-lg-4">
+        <div class="row pb-5">
+          <div class="col-lg-5 col-md-7">
+            <div class="navbar-brand text-dark p-0 me-0 mb-3 mb-lg-4">OTRA</div>
+            <p class="fs-sm">
+              OTRA - An Ontology for the Transmission and Re-Use of
+              Argumentative Pattern in Christian Muslim Religious Encounters
+            </p>
+            <div class="d-flex justify-content-start align-items-center">
+              <img
+                src="assets/img/EN_fundedbyEU_VERTICAL_RGB_POS.png"
+                alt="Funded by the EU"
+                class="img-fluid me-4"
+                style="width: 150px"
+              />
+              <img
+                src="assets/img/logo-euqu.png"
+                alt="EUQU Project Logo"
+                class="img-fluid me-4"
+                style="width: 150px"
+              />
+              <img
+                src="assets/img/ku_logo_uk_v.png"
+                alt="KU University Logo"
+                class="img-fluid"
+                style="width: 120px"
+              />
+            </div>
+          </div>
+          <div
+            class="col-xl-5 col-lg-6 col-md-4 offset-xl-2 offset-md-1 pt-4 pt-md-1 pt-lg-0"
+          >
+            <div id="footer-links" class="row">
+              <div class="col-lg-4">
+                <h6 class="mb-2">
+                  <a
+                    href="#useful-links"
+                    class="d-block text-dark dropdown-toggle d-lg-none py-2"
+                    data-bs-toggle="collapse"
+                    >Sitemap</a
+                  >
+                </h6>
+                <div
+                  id="useful-links"
+                  class="collapse d-lg-block"
+                  data-bs-parent="#footer-links"
+                >
+                  <ul class="nav flex-column pb-lg-1 mb-lg-3">
+                    <li class="nav-item">
+                      <a href="#" class="nav-link d-inline-block px-0 pt-1 pb-2"
+                        >Home</a
+                      >
+                    </li>
+                    <li class="nav-item">
+                      <a href="#" class="nav-link d-inline-block px-0 pt-1 pb-2"
+                        >About</a
+                      >
+                    </li>
+                    <li class="nav-item">
+                      <a href="#" class="nav-link d-inline-block px-0 pt-1 pb-2"
+                        >Data</a
+                      >
+                    </li>
+                    <li class="nav-item">
+                      <a href="#" class="nav-link d-inline-block px-0 pt-1 pb-2"
+                        >Tutorial</a
+                      >
+                    </li>
+                    <li class="nav-item">
+                      <a href="#" class="nav-link d-inline-block px-0 pt-1 pb-2"
+                        >Links</a
+                      >
+                    </li>
+                  </ul>
+                </div>
+              </div>
+
+              <div class="col-xl-8 col-lg-8 pt-2 pt-lg-0">
+                <h6 class="mb-2">Contact</h6>
+                <a href="mailto:jacob.langeloh@teol.ku.dk" class="fw-medium"
+                  >jacob.langeloh@teol.ku.dk</a
+                >
+                <ul class="nav flex-column mb-2 mb-lg-0">
+                  <li class="nav-item">
+                    <a
+                      href="/imprint"
+                      class="nav-link d-inline-block px-0 pt-1 pb-2"
+                      >Imprint</a
+                    >
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+        <p
+          class="nav d-block fs-xs text-center text-md-start pb-2 pb-lg-0 mb-0"
+        >
+          Made with
+          <i
+            class="bx bx-heart d-inline-block fs-lg text-gradient-primary align-middle mt-n1 mx-1"
+          >
+          </i>
+          by
+          <a
+            href="https://dhcraft.org"
+            class="text-muted"
+            target="_blank"
+            rel="noopener"
+            >DH Craft</a
+          >
+        </p>
+      </div>
+    </footer>
+
+    <!-- Back to top button -->
+    <a href="#top" class="btn-scroll-top" data-scroll>
+      <span class="btn-scroll-top-tooltip text-muted fs-sm me-2">Top</span>
+      <i class="btn-scroll-top-icon bx bx-chevron-up"></i>
+    </a>
+
+    <!-- Vendor Scripts -->
+    <script src="assets/vendor/jarallax/dist/jarallax.min.js"></script>
+
+    <!-- Main Theme Script -->
+    <script src="assets/js/theme.min.js"></script>
+  </body>
+</html>
