@@ -262,7 +262,23 @@
                 Statements. Here is an example of a Block with its Connective
                 Claims and Statements, serialized as Turtle:
               </p>
-              <p>[Data Example]</p>
+              <div class="border mb-3"><div class="nav p-2 justify-content-end"><button class="btn btn-outline-dark btn-sm copyButton" type="button" onclick="copyText(document.getElementById('ttl-example-001'))">Copy</button></div><div class="tab-content mb-4"><div class="tab-pane active" role="tabpanel"><pre class="grey lighten-3 mb-0 line-numbers overflow-auto" style="max-height: 500px;"><code class="language-turtle" id="ttl-example-001"> 
+
+@prefix otradata: &lt;https://otraorg.github.io/data/&gt; .
+@prefix doco: &lt;http://purl.org/spar/doco/&gt; .
+@prefix crm: &lt;http://www.cidoc-crm.org/cidoc-crm/&gt; .
+@prefix ConnectiveOntology: &lt;https://otraorg.github.io/ontology#&gt; .
+
+otradata:Epitome_bellorum__B.1.10 a doco:Paragraph ;
+    crm:P67_refers_to otradata:Epitome_bellorum__S.1.10.0 ;
+    crm:R15i_is_fragment_of otradata:Epitome_bellorum_sacrorum ;
+    ConnectiveOntology:has_explicit "in bello et poterit nutrire." ;
+    ConnectiveOntology:has_incipit "(11) Concedit pluralitatem uxorum et" .
+
+</code></pre></div></div></div>
+
+<p>A connective claim is usually defined by its RefSubject and RefObject</p>
+
               <h1 id="exploration">Exploration</h1>
               <p>
                 To explore the dataset, here are some questions that we could
@@ -274,32 +290,189 @@
               >
                 What Connective Claims are made about a specific source work?
               </h3>
+			  The following query will find Connective Claims that regard Jacobus de Voragine's <i>Legenda Aurea</i>:
+
+<div class="border mb-3"><div class="nav p-2 justify-content-end"><button class="btn btn-outline-dark btn-sm copyButton" type="button" onclick="copyText(document.getElementById('sparql-example-001'))">Copy</button></div><div class="tab-content mb-4"><div class="tab-pane active" role="tabpanel"><pre class="grey lighten-3 mb-0 line-numbers overflow-auto" style="max-height: 500px;"><code class="language-turtle" id="sparql-example-001"> 
+@prefix hdn: &lt;https://hdn.dantenetwork.it/ontology#&gt; .
+@prefix otradata: &lt;https://otraorg.github.io/data/&gt; .
+@prefix lrmoo: &lt;http://iflastandards.info/ns/lrm/lrmoo/&gt; .
+
+SELECT ?claim ?passage where {
+    ?claim hdn:hasRefObject ?passage .
+    ?passage lrmoo:R15i_is_fragment_of otradata:Jacobus_de_Voragine__Legenda_Aurea .
+} 
+ORDER BY asc(?claim)
+LIMIT 10
+</code></pre></div></div></div>
+
+<p>The predicate "hdn:hasRefObject" has ConnectiveOntology:ConnectiveClaim as a range, we do not need to specify that ?claim is a ConnectiveClaim.</p>
+
               <h3
                 id="what-connective-claims-are-contained-within-a-specific-block"
               >
                 What Connective Claims are contained within a specific Block?
               </h3>
+			  <p>The RefSubject of a claim is usually a text passage. This text passage has a position. The position has a positionUnit, which is then the block. We therefore need to chain together these requests</p>
+
+<div class="border mb-3"><div class="nav p-2 justify-content-end"><button class="btn btn-outline-dark btn-sm copyButton" type="button" onclick="copyText(document.getElementById('sparql-example-002'))">Copy</button></div><div class="tab-content mb-4"><div class="tab-pane active" role="tabpanel"><pre class="grey lighten-3 mb-0 line-numbers overflow-auto" style="max-height: 500px;"><code class="language-turtle" id="sparql-example-002"> 
+@prefix hdn: &lt;https://hdn.dantenetwork.it/ontology#&gt; .
+@prefix otradata: &lt;https://otraorg.github.io/data/&gt; .
+
+select ?claim ?fromposition where {
+    ?claim hdn:hasRefSubject ?passage .
+    ?passage hdn:fromPosition ?fromposition .
+    ?fromposition hdn:positionUnit otradata:Epitome_bellorum__B.0.4
+} ORDER BY asc(?claim)
+</code></pre></div></div></div>
               <h3 id="what-claims-point-to-a-specific-block">
                 What claims point to a specific Block?
               </h3>
+			  <p>We are selecting a paragraph from Riccoldo's work, in this case paragraph 4 of chapter 3. Which claims in the data we ingested point to it?</p>
+
+<div class="border mb-3"><div class="nav p-2 justify-content-end"><button class="btn btn-outline-dark btn-sm copyButton" type="button" onclick="copyText(document.getElementById('sparql-example-003'))">Copy</button></div><div class="tab-content mb-4"><div class="tab-pane active" role="tabpanel"><pre class="grey lighten-3 mb-0 line-numbers overflow-auto" style="max-height: 500px;"><code class="language-turtle" id="sparql-example-003"> 
+@prefix hdn: &lt;https://hdn.dantenetwork.it/ontology#&gt; .
+@prefix otradata: &lt;https://otraorg.github.io/data/&gt; .
+
+select ?claim where {
+    ?claim hdn:hasRefObject ?object .
+    ?object hdn:toPosition ?start_position .
+    ?start_position hdn:positionUnit otradata:Ricc_CLS__B.3.4
+} limit 100
+</code></pre></div></div></div>
+
+<p>Here the results become interesting! Both a passage in the <i>Epitome bellorum sacrorum</i> <b>and</b> one in Ragusa's <i>Comparatio Legum</i> point at this passage.</p>
               <h2 id="statements">Statements</h2>
               <h3 id="which-statements-are-attached-to-a-specific-block">
                 Which statements are attached to a specific Block?
               </h3>
+			  <div class="border mb-3"><div class="nav p-2 justify-content-end"><button class="btn btn-outline-dark btn-sm copyButton" type="button" onclick="copyText(document.getElementById('sparql-example-004'))">Copy</button></div><div class="tab-content mb-4"><div class="tab-pane active" role="tabpanel"><pre class="grey lighten-3 mb-0 line-numbers overflow-auto" style="max-height: 500px;"><code class="language-turtle" id="sparql-example-004"> 
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+@prefix hdn: &lt;https://hdn.dantenetwork.it/ontology#&gt; .
+@prefix otradata: &lt;https://otraorg.github.io/data/&gt; .
+@prefix lrmoo: &lt;http://iflastandards.info/ns/lrm/lrmoo/&gt; .
+
+select ?statement ?passage ?content where {
+    ?statement lrmoo:R3_realised_in ?passage .
+    ?statement rdfs:label ?content .
+    ?passage hdn:fromPosition ?fromposition .
+    ?fromposition hdn:positionUnit otradata:Epitome_bellorum__B.0.4
+} ORDER BY asc(?claim)
+</code></pre></div></div></div>
+
               <h3 id="what-statements-can-be-found-in-a-specific-source-work">
                 What statements can be found in a specific source work?
               </h3>
+			  
+			  <div class="border mb-3"><div class="nav p-2 justify-content-end"><button class="btn btn-outline-dark btn-sm copyButton" type="button" onclick="copyText(document.getElementById('sparql-example-005'))">Copy</button></div><div class="tab-content mb-4"><div class="tab-pane active" role="tabpanel"><pre class="grey lighten-3 mb-0 line-numbers overflow-auto" style="max-height: 500px;"><code class="language-turtle" id="sparql-example-005"> 
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+@prefix hdn: &lt;https://hdn.dantenetwork.it/ontology#&gt; .
+@prefix otradata: &lt;https://otraorg.github.io/data/&gt; .
+@prefix lrmoo: &lt;http://iflastandards.info/ns/lrm/lrmoo/&gt; .
+@prefix crm: &lt;http://www.cidoc-crm.org/cidoc-crm/&gt; .
+
+select ?statement ?passage ?content where {
+    ?statement lrmoo:R3_realised_in ?passage .
+    ?passage hdn:fromPosition ?frompos .
+    ?frompos hdn:positionUnit ?positionUnit .
+    ?statement rdfs:label ?content .
+    ?positionUnit crm:R15i_is_fragment_of otradata:Epitome_bellorum_sacrorum
+} ORDER BY asc(?claim)
+</code></pre></div></div></div>
               <h2 id="synergies-and-overlaps">Synergies and overlaps</h2>
+			  
+			   <h3
+                id="how-do-we-find-the-shared-reference-points-between-works"
+              >
+                How do we find the shared reference points between works?
+              </h3>
+<p>All Shared Object Blocks between <i>Ragusa's works</i> and the <i>Epitome bellorum sacrorum</i></p>
+
+<div class="border mb-3"><div class="nav p-2 justify-content-end"><button class="btn btn-outline-dark btn-sm copyButton" type="button" onclick="copyText(document.getElementById('sparql-example-006'))">Copy</button></div><div class="tab-content mb-4"><div class="tab-pane active" role="tabpanel"><pre class="grey lighten-3 mb-0 line-numbers overflow-auto" style="max-height: 500px;"><code class="language-turtle" id="sparql-example-006"> 
+@prefix ConnectiveOntology: &lt;https://otraorg.github.io/ontology#&gt; .
+@prefix hdn: &lt;https://hdn.dantenetwork.it/ontology#&gt; .
+@prefix lrmoo: &lt;http://iflastandards.info/ns/lrm/lrmoo/&gt; .
+@prefix otradata: &lt;https://otraorg.github.io/data/&gt; .
+
+SELECT ?positionUnit ?incipit
+WHERE {
+  {
+    # Retrieve positionUnits for the first subject (Epitome_bellorum_sacrorum)
+    ?claim1 a ConnectiveOntology:ConnectiveClaim ;
+            hdn:hasRefSubject ?subject1 ;
+            hdn:hasRefObject ?object1 .
+    ?subject1 lrmoo:R15i_is_fragment_of otradata:Juan_de_Segovia_De_gladio_divini_spiritus .
+    ?object1 hdn:fromPosition ?position1 .
+    ?position1 hdn:positionUnit ?positionUnit .
+    
+    # Add incipit for this positionUnit
+    OPTIONAL { ?positionUnit ConnectiveOntology:has_incipit ?incipit . }
+  }
+  UNION
+  {
+    # Retrieve positionUnits for the second subject (Works_of_John_of_Ragusa_on_Islam)
+    ?claim2 a ConnectiveOntology:ConnectiveClaim ;
+            hdn:hasRefSubject ?subject2 ;
+            hdn:hasRefObject ?object2 .
+    ?subject2 lrmoo:R15i_is_fragment_of otradata:Works_of_John_of_Ragusa_on_Islam .
+    ?object2 hdn:fromPosition ?position2 .
+    ?position2 hdn:positionUnit ?positionUnit .
+    
+    # Add incipit for this positionUnit
+    OPTIONAL { ?positionUnit ConnectiveOntology:has_incipit ?incipit . }
+  }
+}
+GROUP BY ?positionUnit ?incipit
+HAVING (COUNT(DISTINCT ?claim1) > 0 && COUNT(DISTINCT ?claim2) > 0)
+</code></pre></div></div></div>
+
               <h3 id="how-can-we-find-chains-of-transmission">
                 How can we find Chains of Transmission?
               </h3>
-              <p>(Liber denudationis in Epitome)</p>
-              <h3
-                id="how-do-we-find-the-overlap-between-statements-and-connective-claims"
-              >
-                How do we find the overlap between Statements and Connective
-                Claims?
-              </h3>
+              <p>How is the previous work <i>Liber denudationis</i> represented in the <i>Epitome bellorum sacrorum?</i></p>
+			  <div class="border mb-3"><div class="nav p-2 justify-content-end"><button class="btn btn-outline-dark btn-sm copyButton" type="button" onclick="copyText(document.getElementById('sparql-example-007'))">Copy</button></div><div class="tab-content mb-4"><div class="tab-pane active" role="tabpanel"><pre class="grey lighten-3 mb-0 line-numbers overflow-auto" style="max-height: 500px;"><code class="language-turtle" id="sparql-example-007"> 
+@prefix hdn: &lt;https://hdn.dantenetwork.it/ontology#&gt; .
+@prefix lrmoo: &lt;http://iflastandards.info/ns/lrm/lrmoo/&gt; .
+@prefix otradata: &lt;https://otraorg.github.io/data/&gt; .
+
+SELECT DISTINCT ?passage ?cls_para ?ref_passage ?startpos ?startoffset ?endpos ?endoffset
+WHERE {
+    # Step 1: Identify passages in "Epitome_bellorum_sacrorum"
+    ?passage lrmoo:R15i_is_fragment_of otradata:Epitome_bellorum_sacrorum .
+    
+    # Step 2: These passages are subjects of claims with specific objects
+    ?claim1 hdn:hasRefSubject ?passage .
+    ?claim1 hdn:hasRefObject ?object1 .
+    
+    # Objects have positions with specific position units
+    ?object1 hdn:fromPosition ?position1 .
+    ?position1 hdn:positionUnit ?cls_para .
+    
+    # ?cls_para should be associated with "Riccoldo_da_Monte_di_Croce__Contra_Legem_Sarracenorum"
+    ?cls_para lrmoo:R15i_is_fragment_of otradata:Riccoldo_da_Monte_di_Croce__Contra_Legem_Sarracenorum .
+    
+    # Step 3: Establish influence relationship through "Contrarietas_Alpholica"
+    ?claim2 hdn:hasRefSubject ?subject2 .
+    ?claim2 hdn:hasRefObject ?ref_passage .
+    ?ref_passage lrmoo:R15i_is_fragment_of <https://otraorg.github.io/data/Contrarietas_Alpholica,_BNP,_ms._lat._3394,_ff._238r-265v.> .
+    
+    # ?subject2 should share the same position unit with the identified claim objects
+    ?subject2 hdn:fromPosition ?position2 .
+    ?position2 hdn:positionUnit ?cls_para .
+    
+    # Ensure ?subject2 is also a fragment of "Riccoldo_da_Monte_di_Croce__Contra_Legem_Sarracenorum"
+    ?subject2 lrmoo:R15i_is_fragment_of otradata:Riccoldo_da_Monte_di_Croce__Contra_Legem_Sarracenorum .
+    
+	# Retrieve additional information regarding the passage in *Liber denudationis*
+    ?ref_passage hdn:fromPosition ?start_denu .
+    ?ref_passage hdn:toPosition ?end_denu .
+    ?start_denu hdn:positionUnit ?startpos .
+    ?start_denu hdn:positionOffset ?startoffset .
+    ?end_denu hdn:positionUnit ?endpos .
+    ?end_denu hdn:positionOffset ?endoffset .
+}
+ORDER BY ?passage
+</code></pre></div></div></div>
+             
             </div>
           </div>
           <div class="col-lg-3 position-relative">
