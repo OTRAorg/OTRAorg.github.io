@@ -69,7 +69,8 @@
 
     <!-- Main Theme Styles + Bootstrap -->
     <link rel="stylesheet" media="screen" href="assets/css/theme.min.css" />
-
+	<link rel="stylesheet" type="text/css" href="assets/css/prism.css"/>
+	
     <!-- Page loading styles -->
     <style>
       .page-loading {
@@ -292,9 +293,9 @@ otradata:Epitome_bellorum__B.1.10 a doco:Paragraph ;
 			  The following query will find Connective Claims that regard Jacobus de Voragine's <i>Legenda Aurea</i>:
 
 <div class="border mb-3"><div class="nav p-2 justify-content-end"><button class="btn btn-outline-dark btn-sm copyButton" type="button" onclick="copyText(document.getElementById('sparql-example-001'))">Copy</button></div><div class="tab-content mb-4"><div class="tab-pane active" role="tabpanel"><pre class="grey lighten-3 mb-0 line-numbers overflow-auto" style="max-height: 500px;"><code class="language-sparql" id="sparql-example-001"> 
-PREFIX hdn: &lt;https://hdn.dantenetwork.it/ontology#&gt; .
-PREFIX otradata: &lt;https://otraorg.github.io/data/&gt; .
-PREFIX lrmoo: &lt;http://iflastandards.info/ns/lrm/lrmoo/&gt; .
+PREFIX hdn: &lt;https://hdn.dantenetwork.it/ontology#&gt;
+PREFIX otradata: &lt;https://otraorg.github.io/data/&gt;
+PREFIX lrmoo: &lt;http://iflastandards.info/ns/lrm/lrmoo/&gt;
 
 SELECT ?claim ?passage WHERE {
     ?claim hdn:hasRefObject ?passage .
@@ -314,8 +315,8 @@ LIMIT 10
 			  <p>The RefSubject of a claim is usually a text passage. This text passage has a position. The position has a positionUnit, which is then the block. We therefore need to chain together these requests</p>
 
 <div class="border mb-3"><div class="nav p-2 justify-content-end"><button class="btn btn-outline-dark btn-sm copyButton" type="button" onclick="copyText(document.getElementById('sparql-example-002'))">Copy</button></div><div class="tab-content mb-4"><div class="tab-pane active" role="tabpanel"><pre class="grey lighten-3 mb-0 line-numbers overflow-auto" style="max-height: 500px;"><code class="language-sparql" id="sparql-example-002"> 
-PREFIX hdn: &lt;https://hdn.dantenetwork.it/ontology#&gt; .
-PREFIX otradata: &lt;https://otraorg.github.io/data/&gt; .
+PREFIX hdn: &lt;https://hdn.dantenetwork.it/ontology#&gt;
+PREFIX otradata: &lt;https://otraorg.github.io/data/&gt;
 
 SELECT ?claim ?fromposition WHERE {
     ?claim hdn:hasRefSubject ?passage .
@@ -329,8 +330,8 @@ SELECT ?claim ?fromposition WHERE {
 			  <p>We are selecting a paragraph from Riccoldo's work, in this case paragraph 4 of chapter 3. Which claims in the data we ingested point to it?</p>
 
 <div class="border mb-3"><div class="nav p-2 justify-content-end"><button class="btn btn-outline-dark btn-sm copyButton" type="button" onclick="copyText(document.getElementById('sparql-example-003'))">Copy</button></div><div class="tab-content mb-4"><div class="tab-pane active" role="tabpanel"><pre class="grey lighten-3 mb-0 line-numbers overflow-auto" style="max-height: 500px;"><code class="language-sparql" id="sparql-example-003"> 
-PREFIX hdn: &lt;https://hdn.dantenetwork.it/ontology#&gt; .
-PREFIX otradata: &lt;https://otraorg.github.io/data/&gt; .
+PREFIX hdn: &lt;https://hdn.dantenetwork.it/ontology#&gt;
+PREFIX otradata: &lt;https://otraorg.github.io/data/&gt;
 
 SELECT ?claim WHERE {
     ?claim hdn:hasRefObject ?object .
@@ -345,10 +346,10 @@ SELECT ?claim WHERE {
                 Which statements are attached to a specific Block?
               </h3>
 			  <div class="border mb-3"><div class="nav p-2 justify-content-end"><button class="btn btn-outline-dark btn-sm copyButton" type="button" onclick="copyText(document.getElementById('sparql-example-004'))">Copy</button></div><div class="tab-content mb-4"><div class="tab-pane active" role="tabpanel"><pre class="grey lighten-3 mb-0 line-numbers overflow-auto" style="max-height: 500px;"><code class="language-sparql" id="sparql-example-004"> 
-PREFIX rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt; .
-PREFIX hdn: &lt;https://hdn.dantenetwork.it/ontology#&gt; .
-PREFIX otradata: &lt;https://otraorg.github.io/data/&gt; .
-PREFIX lrmoo: &lt;http://iflastandards.info/ns/lrm/lrmoo/&gt; .
+PREFIX rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt;
+PREFIX hdn: &lt;https://hdn.dantenetwork.it/ontology#&gt;
+PREFIX otradata: &lt;https://otraorg.github.io/data/&gt;
+PREFIX lrmoo: &lt;http://iflastandards.info/ns/lrm/lrmoo/&gt;
 
 SELECT ?statement ?passage ?content WHERE {
     ?statement lrmoo:R3_realised_in ?passage .
@@ -363,11 +364,11 @@ SELECT ?statement ?passage ?content WHERE {
               </h3>
 			  
 			  <div class="border mb-3"><div class="nav p-2 justify-content-end"><button class="btn btn-outline-dark btn-sm copyButton" type="button" onclick="copyText(document.getElementById('sparql-example-005'))">Copy</button></div><div class="tab-content mb-4"><div class="tab-pane active" role="tabpanel"><pre class="grey lighten-3 mb-0 line-numbers overflow-auto" style="max-height: 500px;"><code class="language-sparql" id="sparql-example-005"> 
-PREFIX rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt; .
-PREFIX hdn: &lt;https://hdn.dantenetwork.it/ontology#&gt; .
+PREFIX rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt;
+PREFIX hdn: &lt;https://hdn.dantenetwork.it/ontology#&gt;
 PREFIX otradata: &lt;https://otraorg.github.io/data/&gt; .
-PREFIX lrmoo: &lt;http://iflastandards.info/ns/lrm/lrmoo/&gt; .
-PREFIX crm: &lt;http://www.cidoc-crm.org/cidoc-crm/&gt; .
+PREFIX lrmoo: &lt;http://iflastandards.info/ns/lrm/lrmoo/&gt;
+PREFIX crm: &lt;http://www.cidoc-crm.org/cidoc-crm/&gt;
 
 SELECT ?statement ?passage ?content WHERE {
     ?statement lrmoo:R3_realised_in ?passage .
@@ -387,10 +388,10 @@ SELECT ?statement ?passage ?content WHERE {
 <p>All Shared Object Blocks between <i>Ragusa's works</i> and the <i>Epitome bellorum sacrorum</i></p>
 
 <div class="border mb-3"><div class="nav p-2 justify-content-end"><button class="btn btn-outline-dark btn-sm copyButton" type="button" onclick="copyText(document.getElementById('sparql-example-006'))">Copy</button></div><div class="tab-content mb-4"><div class="tab-pane active" role="tabpanel"><pre class="grey lighten-3 mb-0 line-numbers overflow-auto" style="max-height: 500px;"><code class="language-sparql" id="sparql-example-006"> 
-PREFIX ConnectiveOntology: &lt;https://otraorg.github.io/ontology#&gt; .
-PREFIX hdn: &lt;https://hdn.dantenetwork.it/ontology#&gt; .
-PREFIX lrmoo: &lt;http://iflastandards.info/ns/lrm/lrmoo/&gt; .
-PREFIX otradata: &lt;https://otraorg.github.io/data/&gt; .
+PREFIX ConnectiveOntology: &lt;https://otraorg.github.io/ontology#&gt;
+PREFIX hdn: &lt;https://hdn.dantenetwork.it/ontology#&gt;
+PREFIX lrmoo: &lt;http://iflastandards.info/ns/lrm/lrmoo/&gt;
+PREFIX otradata: &lt;https://otraorg.github.io/data/&gt;
 
 SELECT ?positionUnit ?incipit
 WHERE {
@@ -429,9 +430,9 @@ HAVING (COUNT(DISTINCT ?claim1) > 0 && COUNT(DISTINCT ?claim2) > 0)
               </h3>
               <p>How is the previous work <i>Liber denudationis</i> represented in the <i>Epitome bellorum sacrorum?</i></p>
 			  <div class="border mb-3"><div class="nav p-2 justify-content-end"><button class="btn btn-outline-dark btn-sm copyButton" type="button" onclick="copyText(document.getElementById('sparql-example-007'))">Copy</button></div><div class="tab-content mb-4"><div class="tab-pane active" role="tabpanel"><pre class="grey lighten-3 mb-0 line-numbers overflow-auto" style="max-height: 500px;"><code class="language-sparql" id="sparql-example-007"> 
-PREFIX hdn: &lt;https://hdn.dantenetwork.it/ontology#&gt; .
-PREFIX lrmoo: &lt;http://iflastandards.info/ns/lrm/lrmoo/&gt; .
-PREFIX otradata: &lt;https://otraorg.github.io/data/&gt; .
+PREFIX hdn: &lt;https://hdn.dantenetwork.it/ontology#&gt;
+PREFIX lrmoo: &lt;http://iflastandards.info/ns/lrm/lrmoo/&gt;
+PREFIX otradata: &lt;https://otraorg.github.io/data/&gt;
 
 SELECT DISTINCT ?passage ?cls_para ?ref_passage ?startpos ?startoffset ?endpos ?endoffset
 WHERE {
